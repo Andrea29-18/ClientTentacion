@@ -1,40 +1,38 @@
 document.getElementById('loginForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Evita que la pÃ¡gina se recargue
+    e.preventDefault(); // Evita que la página se recargue
 
-    // ObtÃ©n los valores del formulario
     const usuario = document.getElementById('usuario').value;
     const contrasena = document.getElementById('password').value;
 
+    if (!usuario || !contrasena) {
+        alert('Por favor, ingresa usuario y contraseña.');
+        return;
+    }
+
     try {
-        // Realiza la peticiÃ³n POST al endpoint de login usando fetch
         const response = await fetch('http://192.168.137.1:8080/login', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json', // O prueba 'application/x-www-form-urlencoded'
             },
             body: JSON.stringify({
-                usuario, // Usuario ingresado
-                contrasena // ContraseÃ±a ingresada
+                username: usuario, // Cambia al nombre esperado por el servidor
+                password: contrasena
             })
         });
 
-        // Verifica que la respuesta sea correcta (status 200)
         if (response.ok) {
             const data = await response.json();
-            const token = data.token; // Asumiendo que el token viene en 'data.token'
-            localStorage.setItem('token', token); // Guarda el token en el localStorage
-
-            alert('Inicio de sesiÃ³n exitoso');
-            window.location.href = 'dashboard.html'; // Redirige al dashboard o pÃ¡gina principal
+            localStorage.setItem('token', data.token);
+            alert('Inicio de sesión exitoso');
+            window.location.href = 'dashboard.html';
         } else {
-            // Si la respuesta no es exitosa, muestra el error
-            const errorData = await response.json();
+            const errorData = await response.json().catch(() => {});
             console.error('Error en el login:', errorData);
-            alert('Error: ' + (errorData.error || 'Usuario o contraseÃ±a incorrectos.'));
+            alert('Error: ' + (errorData?.error || 'Solicitud incorrecta.'));
         }
     } catch (error) {
-        // Captura y muestra cualquier otro error
         console.error('Error al hacer la solicitud:', error);
-        alert('Error de red. Por favor, verifica tu conexiÃ³n.');
+        alert('Error al conectar con el servidor.');
     }
 });
