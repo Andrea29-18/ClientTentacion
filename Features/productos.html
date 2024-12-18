@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Styles/style.css">
+        <title>Productos</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="titulo-elegante">D.Tentación </h1>
+            <button class="btn-header">Pedidos pendientes</button>
+            <button class="btn-header">Enviar Pedido</button>
+        </header>
+        <section class="sub-header">
+            <h1 class="subtitulo">Gestión de productos</h1>
+            <form action="/buscar-productos" method="GET" class="form-buscar">
+                <input type="text" name="query"
+                    placeholder="Buscar productos..." required
+                    class="input-buscar">
+                <button type="submit" class="btn-buscar">Buscar</button>
+            </form>
+        </section>
+        <button class="btn-header">Añadir producto</button>
+        <section id="tabla-productos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>
