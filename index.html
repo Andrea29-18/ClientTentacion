@@ -4,49 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D.Tentación</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que este sea el nombre de tu archivo CSS -->
+    <link rel="stylesheet" href="./Styles/index.css">
 </head>
 <body>
     <!-- Encabezado con barra de navegación -->
     <header>
         <h1>D.Tentación</h1>
         <nav>
-            <ul style="display: flex; gap: 20px; list-style: none; margin-top: 10px;">
-                <li><a href="./Features/login.html" style="text-decoration: none; color: #333333;">Inicio de Sesión</a></li>
-                <li><a href="#sobre-nosotros" style="text-decoration: none; color: #333333;">Sobre Nosotros</a></li>
-                <li><a href="#productos" style="text-decoration: none; color: #333333;">Nuestros Productos</a></li>
+            <ul>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./HTML/aboutMe.html">Sobre Nosotros</a></li>
+                <li><a href="./HTML/login.html">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Imagen de presentación -->
+    <!-- Sección Hero -->
     <section class="hero">
-        <div class="image-container">
-            <img src="https://via.placeholder.com/1920x600?text=Postre+Delicioso" alt="Postre de D.Tentación" style="width: 100%; height: auto;">
-        </div>
-        <h1 style="text-align: center; margin-top: -150px; color: #FF8986; font-family: 'Style Script', cursive; font-size: 48px;">
-            Bienvenido a D.Tentación
-        </h1>
+        <h1>El Sabor que Encanta</h1>
     </section>
 
-    <!-- Sección de productos -->
-    <section id="productos" style="margin: 20px;">
-        <h2 style="text-align: center; font-family: 'Roboto', sans-serif; font-size: 32px; color: #FF8986; margin-bottom: 20px;">
-            Nuestros Productos
-        </h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            <!-- Producto ejemplo -->
-            <div style="border: 1px solid #ccc; border-radius: 10px; padding: 10px; text-align: center; background-color: #FFFDF4;">
-                <img src="https://via.placeholder.com/250x200?text=Pastel+1" alt="Pastel de Chocolate" style="width: 100%; height: auto; border-radius: 10px;">
-                <h3 style="margin-top: 10px; font-family: 'Roboto', sans-serif; color: #333333;">Pastel de Chocolate</h3>
+    <!-- Sección Productos -->
+    <section class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid">
+            <div class="producto producto--pastel-chocolate">
+                <h3 class="producto__titulo">Pastel de Chocolate</h3>
             </div>
-            <div style="border: 1px solid #ccc; border-radius: 10px; padding: 10px; text-align: center; background-color: #FFFDF4;">
-                <img src="https://via.placeholder.com/250x200?text=Pastel+2" alt="Cheesecake de Fresa" style="width: 100%; height: auto; border-radius: 10px;">
-                <h3 style="margin-top: 10px; font-family: 'Roboto', sans-serif; color: #333333;">Cheesecake de Fresa</h3>
+            <div class="producto producto--cheesecake-fresa">
+                <h3 class="producto__titulo">Cheesecake de Fresa</h3>
             </div>
-            <div style="border: 1px solid #ccc; border-radius: 10px; padding: 10px; text-align: center; background-color: #FFFDF4;">
-                <img src="https://via.placeholder.com/250x200?text=Pastel+3" alt="Brownies" style="width: 100%; height: auto; border-radius: 10px;">
-                <h3 style="margin-top: 10px; font-family: 'Roboto', sans-serif; color: #333333;">Brownies</h3>
+            <div class="producto producto--brownies">
+                <h3 class="producto__titulo">Brownies</h3>
             </div>
         </div>
     </section>

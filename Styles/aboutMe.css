@@ -1,0 +1,79 @@
+/* General */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: #333333;
+    margin: 0;
+    background-color: #FFFDF4;
+}
+
+header {
+    background-color: #FFB2C7;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Style Script', cursive;
+    font-size: 36px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor principal */
+.sobre-nosotros-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 40px;
+}
+
+/* Texto */
+.sobre-nosotros-texto {
+    width: 60%;
+    text-align: justify;
+}
+
+/* Imágenes */
+.sobre-nosotros-imagenes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%;
+}
+
+.imagen-volteado,
+.imagen-chef {
+    width: 100%;
+    height: 200px; /* Ajusta el tamaño según necesites */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-volteado {
+    background-image: url('./Resources/Desserts/volteadoDePiña.png');
+}
+
+.imagen-chef {
+    background-image: url('./Resources/Chef/chef.png');
+}
