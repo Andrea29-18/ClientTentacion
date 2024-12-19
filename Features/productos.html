@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Agregar Axios desde el CDN -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
         <link rel="stylesheet" href="/Styles/style.css">
         <title>Productos</title>
     </head>
@@ -22,21 +26,23 @@
             </form>
         </section>
         <button class="btn-header">Añadir producto</button>
+
         <section id="tabla-productos">
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
+                        <th>Nombre </th>
+                        <th>cantidad en stock</th>
                         <th>Precio</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <!-- Aquí se llenarán los productos -->
                 </tbody>
             </table>
         </section>
+        <script src="/Services/productos.js"></script>
     </body>
 </html>
