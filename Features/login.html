@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Styles/style.css">
+        <title>Inicio de sesión</title>
+        <meta http-equiv="Content-Security-Policy"
+            content="connect-src 'self' http://192.168.137.1:8080;">
+    </head>
+    <body>
+        <main>
+            <div id="login">
+                <h1 id="tituloLogin">D. Tentacion</h1>
+                <p>Inicia sesión con tu <br />cuenta de usuario</p>
+                <form id="loginForm">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" class="text-field__input" name="usuario"
+                        id="usuario" placeholder="Usuario" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="text-field__input"
+                        name="password" id="password" placeholder="Contraseña"
+                        required>
+                    <input type="submit" class="form__submit-button"
+                        value="Iniciar sesión">
+                    <a href="index.html" class="form__link">¿Olvidaste tu
+                        contraseña?</a>
+                </form>
+            </div>
+            <div class="image-container"></div>
+        </main>
+        <script src="/Services/login.js"></script>
+    </body>
+</html>

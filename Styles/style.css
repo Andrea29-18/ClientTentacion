@@ -1,0 +1,189 @@
+/* 
+    Estilos base para el proyecto
+    -----------------------------------
+    Este archivo contiene los estilos base para el proyecto. 
+    Estos estilos son aplicados a todos los elementos HTML5 
+    y eliminan los márgenes, paddings y bordes predeterminados 
+    de los navegadores.
+*/
+/* Elimina márgenes, paddings y bordes predeterminados */
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Estilo base para todos los elementos HTML5 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* Asegura que las listas no tengan estilo predeterminado */
+ol, ul {
+    list-style: none;
+}
+
+/* Remueve las comillas predeterminadas en blockquote y q */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Reinicia el estilo de las tablas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+header {
+    border: 2px solid red;
+    height: 100px;
+}
+
+h1 {
+
+    color: #FF8986;
+    font-size: 64px;
+    font-family: Style Script;
+    font-weight: 400;
+    line-height: 44px;
+    word-wrap: break-word
+}
+
+body {
+    background-color: #FFFDF4;
+}
+
+/*inicio de sesion */
+#login {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 170px;
+}
+
+#login p {
+    color: #333333;
+    font-size: 32px;
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 40px;
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#loginForm {
+
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+/* Submit Button */
+.form__submit-button {
+    width: 100%;
+    padding: 12px;
+    background: #FFB2C7;
+    border: none;
+    border-radius: 4px;
+    color: #FFFDF4;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Forgot Password Link */
+.form__link {
+    text-align: center;
+    color: #FFB2C7;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+
+.form__link:hover {
+    text-decoration: underline;
+}
+
+/* Text Field */
+.text-field__label {
+    width: 100%;
+    background: #FFB2C7;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 4px 16px;
+    color: #FFFDF4;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.text-field__input {
+    width: 100%;
+    height: 48px;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    margin-top: -5px;
+
+}
+
+.image-container {
+    width: 300px; /* Ancho del contenedor */
+    height: 300px; /* Alto del contenedor */
+    background-image: url('/Resources/Images/mermelada.png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border-radius: 15px; /* Esquinas redondeadas (opcional) */
+    margin: 20px auto; /* Centrado con márgenes automáticos */
+}
