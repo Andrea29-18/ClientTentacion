@@ -2,7 +2,7 @@
 async function obtenerProductos() {
     try {
         const response = await axios.get('http://localhost:3003/productos'); // Sin paginación
-        
+
         if (response.status === 200) {
             const productos = response.data;
             mostrarProductos(productos); // Mostrar todos los productos inicialmente
@@ -30,7 +30,7 @@ function mostrarProductos(productos) {
             <td>
                 <button class="editar-btn" data-id="${producto._id}">Editar</button>
                 <button class="eliminar-btn" data-id="${producto._id}">Eliminar</button>
-                <button class="actualizar-btn" data-id="${producto._id}">Actualizar</button>
+                
             </td>
         `;
         tablaBody.appendChild(fila);
