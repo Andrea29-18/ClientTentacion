@@ -10,9 +10,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -67,18 +64,15 @@ header {
     display: flex;
     flex-flow: row nowrap;
     height: 100px;
-    /* Se mantiene la altura fija para la estética */
     background-color: #FF8986;
     justify-content: space-between;
     align-items: center;
     padding: 0 5vw;
-    /* Mantiene la flexibilidad lateral */
 }
 
 .titulo-elegante {
     color: #FFFDF4;
     font-size: calc(24px + 4vw);
-    /* Ajuste de tamaño dinámico pero controlado */
     font-family: 'Style Script', cursive;
     font-weight: 400;
     line-height: 1.2;
@@ -89,6 +83,15 @@ body {
     background-color: #FFFDF4;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño */
+}
+
+/* Asegura que el footer se mantenga al final */
+main {
+    flex: 1;
 }
 
 /* Estilo del botón "Añadir producto" */
@@ -104,12 +107,11 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-bottom: 16px; /* Espaciado inferior */
+    margin-bottom: 16px;
     transition: background-color 0.3s ease;
     margin-top: 1%;
 }
 
-/* Efecto hover para el botón */
 .btn-header:hover {
     background: #E69A5B;
 }
@@ -118,16 +120,12 @@ body {
 .subtitulo {
     font-size: 28px;
     font-weight: bold;
-    color: #444; /* Color oscuro */
+    color: #444;
     text-align: center;
     margin-bottom: 8px;
     font-family: 'Roboto', sans-serif;
 }
 
-
-
-
-/* Estilo del formulario */
 .form-buscar {
     display: flex;
     width: 100%;
@@ -135,55 +133,45 @@ body {
     height: 46px;
     min-width: 360px;
     align-items: center;
-    gap: 4px; /* Espacio entre el input y el botón */
+    gap: 4px;
     border-radius: 28px;
-    border: 1px solid #FFAA64; /* Color del borde */
-    background: #FFFDF4; /* Fondo beige claro */
-    padding: 4px; /* Espaciado interno */
-    box-sizing: border-box; /* Padding incluido en el tamaño total */
-}
-
-/* Estilo del input */
-.input-buscar {
-    flex: 1; /* El input ocupa todo el espacio restante */
-    height: 100%; /* Altura completa del contenedor */
-    border: none; /* Sin borde adicional */
-    outline: none; /* Elimina el borde azul al seleccionar */
-    padding: 0 12px; /* Espaciado interno a los lados */
-    font-size: 16px; /* Tamaño del texto */
-    font-family: Arial, sans-serif; /* Fuente del texto */
-    color: #444; /* Texto en color negro suave */
-    background: transparent; /* Fondo transparente para coincidir con el formulario */
-    border-radius: 28px 0 0 28px; /* Bordes redondeados solo en la izquierda */
+    border: 1px solid #FFAA64;
+    background: #FFFDF4;
+    padding: 4px;
     box-sizing: border-box;
 }
 
-/* Estilo del botón */
+.input-buscar {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #444;
+    background: transparent;
+    border-radius: 28px 0 0 28px;
+    box-sizing: border-box;
+}
+
 .btn-buscar {
-    height: 100%; /* Altura completa del contenedor */
-    padding: 0 16px; /* Espaciado interno a los lados */
-    border: none; /* Sin borde */
-    border-radius: 0 28px 28px 0; /* Bordes redondeados solo en la derecha */
-    background-color: #FFAA64; /* Fondo naranja melocotón */
-    color: #FFFDF4; /* Texto blanco */
-    font-size: 16px; /* Tamaño del texto */
-    font-family: Arial, sans-serif; /* Fuente del texto */
-    cursor: pointer; /* Cambia el cursor al pasar */
-    transition: background-color 0.3s ease; /* Animación para el hover */
+    height: 100%;
+    padding: 0 16px;
+    border: none;
+    border-radius: 0 28px 28px 0;
+    background-color: #FFAA64;
+    color: #FFFDF4;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Efecto hover en el botón */
 .btn-buscar:hover {
-    background-color: #E69A5B; /* Oscurece ligeramente el fondo */
+    background-color: #E69A5B;
 }
 
-
-
-
-
-
-
-/* Contenedor de la tabla */
 #tabla-productos {
     display: flex;
     flex-direction: column;
@@ -195,54 +183,40 @@ body {
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
     background-color: #fff;
     overflow-x: auto;
-    /* Habilita scroll horizontal en pantallas pequeñas */
     box-sizing: border-box;
     padding: 16px;
     gap: 16px;
-    font-family: 'Roboto', sans-serif; /* Aplica la fuente general */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Tabla general */
 #tabla-productos table {
     width: 100%;
-    /* Ocupa todo el ancho del contenedor */
     border-collapse: collapse;
-    /* Bordes colapsados */
 }
 
-/* Filas de encabezados */
 #tabla-productos thead {
     display: table-header-group;
-    /* Asegura que el encabezado se muestre correctamente */
     width: 100%;
 }
 
 #tabla-productos th {
     padding: 12px;
     font-weight: 600;
-    /* Texto más grueso */
     text-align: left;
-    /* Alinear texto a la izquierda */
     background-color: #f5f5f5;
-    /* Fondo gris claro */
     border-bottom: 2px solid #ddd;
-    /* Línea divisoria */
     word-wrap: break-word;
-    font-family: 'Roboto', sans-serif; /* Fuente para encabezados */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Cuerpo de la tabla */
 #tabla-productos tbody {
     width: 100%;
 }
 
 #tabla-productos tbody tr {
     display: grid;
-    /* Aplica grid a cada fila */
     grid-template-columns: repeat(5, 1fr);
-    /* Distribuye las columnas uniformemente */
     gap: 12px;
-    /* Espaciado entre columnas */
     align-items: center;
 }
 
@@ -252,24 +226,20 @@ body {
     border-bottom: 1px solid #ddd;
     word-wrap: break-word;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif; /* Fuente para celdas */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Hover en filas */
 #tabla-productos tbody tr:hover {
     background-color: #f9f9f9;
-    /* Fondo más claro al pasar el cursor */
 }
 
-/* Ajusta los encabezados a grid */
 #tabla-productos thead tr {
     display: grid;
-    /* Aplica grid a la fila de encabezados */
     grid-template-columns: repeat(5, 1fr);
-    /* Mismo número de columnas que el cuerpo */
     gap: 12px;
 }
- .editar-btn{
+
+.editar-btn {
     background-color: #FFAA64;
     color: #FFFDF4;
     border: none;
@@ -277,18 +247,9 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
- }
+}
 
- .editar-btn{
-    background-color: #FFCC83;
-    color: #FFFDF4;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
- }
- .eliminar-btn{
+.eliminar-btn {
     background-color: #FF8986;
     color: #FFFDF4;
     border: none;
@@ -296,7 +257,73 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
- }
+}
+
+/*--------------------------agregar producto -------------------------------------------------------*/
+/* Estilos para los labels dentro del formulario */
+/*--------------------------agregar producto -------------------------------------------------------*/
+/* Centrado del formulario en la página */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo del formulario */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0 auto; /* Centra el contenedor si es más pequeño que la pantalla */
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+/* Estilos para los labels dentro del formulario */
+.formulario label {
+    display: flex;
+    width: 100%; /* Asegura que el label ocupe el 100% del ancho disponible */
+    max-width: 210px; /* Limita el ancho máximo para evitar que se expanda demasiado en pantallas grandes */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #FFFDF4;
+    color: #444444;
+    margin-bottom: 8px;
+    padding: 0.5rem; /* Usamos rem para hacer que el espaciado sea relativo al tamaño de la fuente */
+    font-size: 1rem; /* El tamaño de la fuente también es relativo */
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Estilo de los inputs dentro del formulario */
+.formulario input, .formulario select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Botón dentro del formulario */
+.formulario button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #FF8986;
+    color: #FFF;
+    border: none;
+    border-radius: 100px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #e65f5d; /* Cambio de color al pasar el mouse */
+}
+
 
 footer {
     background-color: #FFCC83;
@@ -305,11 +332,12 @@ footer {
     text-align: center;
     padding: 1.5rem;
     width: 100%;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box;
+    margin-top: auto;
 }
 
 footer p {
     margin: 0.5rem 0;
-    font-size: 1rem; /* Ajuste relativo a la pantalla */
+    font-size: 1rem;
     line-height: 1.5;
 }
