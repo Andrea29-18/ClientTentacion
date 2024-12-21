@@ -1,12 +1,12 @@
 // Función para obtener todos los productos
 async function obtenerProductos() {
     try {
-        const response = await axios.get('http://localhost:3003/productos');  // Sin paginación
+        const response = await axios.get('http://localhost:3003/productos'); // Sin paginación
         
-        // Verificamos si la respuesta fue exitosa
         if (response.status === 200) {
             const productos = response.data;
-            mostrarProductos(productos); // Función para mostrar los productos en la tabla
+            mostrarProductos(productos); // Mostrar todos los productos inicialmente
+            configurarBusqueda(productos); // Configurar la búsqueda
         } else {
             console.error('Error al obtener productos:', response.status);
         }
@@ -18,7 +18,7 @@ async function obtenerProductos() {
 // Función para renderizar productos en la tabla
 function mostrarProductos(productos) {
     const tablaBody = document.querySelector('#tabla-productos tbody');
-    tablaBody.innerHTML = ''; // Limpiamos la tabla antes de agregar nuevos productos
+    tablaBody.innerHTML = ''; // Limpiar la tabla
 
     productos.forEach(producto => {
         const fila = document.createElement('tr');
@@ -34,6 +34,33 @@ function mostrarProductos(productos) {
             </td>
         `;
         tablaBody.appendChild(fila);
+    });
+}
+
+// Configurar la búsqueda
+function configurarBusqueda(productos) {
+    const formBuscar = document.getElementById('form-buscar');
+    const inputBuscar = document.getElementById('input-buscar');
+
+    formBuscar.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevenir recarga de la página
+
+        const query = inputBuscar.value.toLowerCase(); // Convertir a minúsculas para búsqueda insensible a mayúsculas
+        const productosFiltrados = productos.filter(producto =>
+            producto.nombreProducto.toLowerCase().includes(query)
+        );
+
+        mostrarProductos(productosFiltrados); // Mostrar solo los productos que coincidan
+    });
+
+    // Opcional: Agregar búsqueda en tiempo real
+    inputBuscar.addEventListener('input', () => {
+        const query = inputBuscar.value.toLowerCase();
+        const productosFiltrados = productos.filter(producto =>
+            producto.nombreProducto.toLowerCase().includes(query)
+        );
+
+        mostrarProductos(productosFiltrados); // Mostrar productos filtrados mientras se escribe
     });
 }
 
