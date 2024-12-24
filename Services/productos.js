@@ -1,7 +1,7 @@
 // Función para obtener todos los productos
 async function obtenerProductos() {
     try {
-        const response = await axios.get('http://localhost:3003/productos'); // Sin paginación
+        const response = await axios.get('http://localhost:3003/productos'); 
 
         if (response.status === 200) {
             const productos = response.data;
