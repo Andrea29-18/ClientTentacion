@@ -335,6 +335,12 @@ main {
     
 }
 
+#nombreInsumo {
+    height: auto; /* Permite que crezca según las opciones */
+    min-height: 100px; /* Altura mínima para visualizar múltiples opciones */
+    overflow-y: auto; /* Agrega un scroll si las opciones exceden el espacio disponible */
+}
+
 
 
 footer {
@@ -353,3 +359,4 @@ footer p {
     font-size: 1rem;
     line-height: 1.5;
 }
+

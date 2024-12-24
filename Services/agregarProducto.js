@@ -1,35 +1,51 @@
-async function cargarCategoriasProducto() {
+// Importar configuración
+import CONFIG from './config.js';
+
+async function cargarCategoriasEInsumos() {
     try {
-        // Realiza la solicitud para obtener las categorías de producto
-        const response = await axios.get('http://localhost:3003/categoriasProducto');
+        const token = CONFIG.TOKEN; // Usar el token desde la configuración
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
 
-        // Verifica que la solicitud fue exitosa
-        if (response.status === 200) {
-            const categorias = response.data;
+        const [categoriasResponse, insumosResponse] = await Promise.all([
+            axios.get('http://localhost:3003/categoriasProducto', config),
+            axios.get('http://localhost:3003/insumos', config),
+        ]);
 
-            // Llama a la función para cargar las opciones en el select
+        if (categoriasResponse.status === 200 && insumosResponse.status === 200) {
+            const categorias = categoriasResponse.data;
+            const insumos = insumosResponse.data;
+
+            // Cargar categorías
             cargarOpciones('nombreCategoria', categorias, 'nombreCategoria');
+
+            // Cargar insumos
+            cargarOpciones('nombreInsumo', insumos, 'nombre');
         } else {
-            console.error('Error al cargar categorías de producto:', response.status);
+            console.error(
+                'Error al cargar categorías o insumos:',
+                categoriasResponse.status,
+                insumosResponse.status
+            );
         }
     } catch (error) {
-        console.error('Error al cargar categorías de producto:', error);
+        console.error('Error al cargar categorías e insumos:', error);
     }
 }
 
-// Función para cargar opciones en un select específico
 function cargarOpciones(selectId, datos, propiedad) {
     const select = document.getElementById(selectId);
 
     if (select) {
-        // Limpia las opciones actuales
         select.innerHTML = '';
 
-        // Crea una opción por cada elemento en los datos
         datos.forEach(item => {
             const option = document.createElement('option');
-            option.value = item[propiedad]; // Usamos 'nombreCategoria' como valor
-            option.textContent = item[propiedad]; // Mostrar 'nombreCategoria' como texto
+            option.value = item[propiedad];
+            option.textContent = item[propiedad];
             select.appendChild(option);
         });
     } else {
@@ -37,7 +53,6 @@ function cargarOpciones(selectId, datos, propiedad) {
     }
 }
 
-// Llama a la función cuando se cargue la página
 document.addEventListener('DOMContentLoaded', () => {
-    cargarCategoriasProducto();
+    cargarCategoriasEInsumos();
 });
