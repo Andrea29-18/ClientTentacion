@@ -369,17 +369,46 @@ main {
     /* Espaciado entre los elementos */
     justify-content: center;
     /* Centra los elementos horizontalmente */
+
 }
+
 
 .opcion {
     width: 300px;
     height: 300px;
     flex-shrink: 0;
-    /* Evita que los elementos se reduzcan */
-    border-radius: 50%;
-    /* Hace los div completamente circulares */
-    background: var(--Naranja-melocoton, #FFAA64);
+    border-radius: 50%; /* Hace los div completamente circulares */
+    background: #FAC2D1;
+    position: relative; /* Necesario para posicionar elementos internos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza imagen y texto en columna */
+    overflow: hidden; /* Asegura que nada salga del círculo */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
 }
+
+.opcion img {
+    width: 70%; /* Ajusta el tamaño de la imagen según necesidad */
+    height: auto;
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+  }
+
+  .opcion:hover {
+    background: #FF8986;
+    transition: 0.3s ease; /* Cambia el color de fondo al pasar el ratón */
+  }
+
+  
+  .opcion span {
+    position: absolute;
+    bottom: 10px; /* Coloca el texto en la parte inferior del círculo */
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+  }
 
 
 
