@@ -340,6 +340,12 @@ main {
     min-height: 100px; /* Altura mínima para visualizar múltiples opciones */
     overflow-y: auto; /* Agrega un scroll si las opciones exceden el espacio disponible */
 }
+.productos .btn-header{
+    margin-top: 2%;
+     align-items: center;
+    justify-content: center;
+    
+}
 
 
 
