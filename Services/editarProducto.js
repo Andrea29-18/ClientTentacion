@@ -151,7 +151,7 @@ async function editarProducto(e) {
             console.log('Producto actualizado correctamente:', response.data);
             alert('Producto actualizado correctamente!');
             // Redirigir o hacer algo después de la actualización, como volver a la lista de productos
-            window.location.href = '/Features/productos.html'; // Cambia la URL a la que desees redirigir
+            window.location.href = '/HTML/productos.html'; // Cambia la URL a la que desees redirigir
         } else {
             console.error('Error al actualizar el producto:', response.status);
         }
