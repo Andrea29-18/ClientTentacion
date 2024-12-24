@@ -1,3 +1,6 @@
+// Importar el objeto CONFIG desde el archivo config.js
+import CONFIG from './config.js';
+
 // Función para obtener todos los productos
 async function obtenerProductos() {
     try {
@@ -30,11 +33,65 @@ function mostrarProductos(productos) {
             <td>
                 <button class="editar-btn" data-id="${producto._id}">Editar</button>
                 <button class="eliminar-btn" data-id="${producto._id}">Eliminar</button>
-                
             </td>
         `;
         tablaBody.appendChild(fila);
     });
+
+    // Agregar eventos a los botones "Editar"
+    document.querySelectorAll('.editar-btn').forEach(boton => {
+        boton.addEventListener('click', (event) => {
+            const productoId = event.target.getAttribute('data-id');
+            redirigirAEditarProducto(productoId);
+        });
+    });
+
+    // Agregar evento a los botones "Eliminar"
+    document.querySelectorAll('.eliminar-btn').forEach(boton => {
+        boton.addEventListener('click', (event) => {
+            const productoId = event.target.getAttribute('data-id');
+            confirmarEliminarProducto(productoId);
+        });
+    });
+}
+
+// Función para redirigir a la página de edición
+function redirigirAEditarProducto(productoId) {
+    window.location.href = `editarProducto.html?id=${productoId}`;
+}
+
+// Función para confirmar la eliminación del producto
+function confirmarEliminarProducto(productoId) {
+    const confirmar = confirm("¿Seguro que quiere eliminar el producto? Esta acción no se puede deshacer.");
+
+    if (confirmar) {
+        eliminarProducto(productoId);
+    }
+}
+
+// Función para eliminar el producto
+async function eliminarProducto(productoId) {
+    try {
+        const token = CONFIG.TOKEN; // Obtener el token desde config.js
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+
+        const response = await axios.delete(`http://localhost:3003/productos/${productoId}`, config);
+
+        if (response.status === 200) {
+            // Mostrar el mensaje de éxito
+            alert('Producto eliminado con éxito.');
+            // Recargar los productos después de la eliminación
+            obtenerProductos();
+        } else {
+            console.error('Error al eliminar el producto:', response.status);
+        }
+    } catch (error) {
+        console.error('Error al hacer la solicitud de eliminación:', error);
+    }
 }
 
 // Configurar la búsqueda
