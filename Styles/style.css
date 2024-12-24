@@ -316,35 +316,69 @@ main {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
 /* Botón dentro del formulario */
 .formulario button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px; /* Ancho fijo como en .btn-header */
-    height: 50px; /* Altura fija como en .btn-header */
-    border-radius: 28px; /* Borde redondeado similar */
-    background-color: #FF8986; /* Color de fondo original */
-    color: #FFF; /* Texto en blanco */
-    font-size: 16px; /* Tamaño de fuente como en .btn-header */
-    border: none; /* Sin borde */
+    width: 150px;
+    /* Ancho fijo como en .btn-header */
+    height: 50px;
+    /* Altura fija como en .btn-header */
+    border-radius: 28px;
+    /* Borde redondeado similar */
+    background-color: #FF8986;
+    /* Color de fondo original */
+    color: #FFF;
+    /* Texto en blanco */
+    font-size: 16px;
+    /* Tamaño de fuente como en .btn-header */
+    border: none;
+    /* Sin borde */
     cursor: pointer;
-    margin-bottom: 16px; /* Separación inferior */
-    margin-top: 1%; /* Separación superior */
-    transition: background-color 0.3s ease; /* Animación de transición */
-    
+    margin-bottom: 16px;
+    /* Separación inferior */
+    margin-top: 1%;
+    /* Separación superior */
+    transition: background-color 0.3s ease;
+    /* Animación de transición */
+
 }
 
 #nombreInsumo {
-    height: auto; /* Permite que crezca según las opciones */
-    min-height: 100px; /* Altura mínima para visualizar múltiples opciones */
-    overflow-y: auto; /* Agrega un scroll si las opciones exceden el espacio disponible */
+    height: auto;
+    /* Permite que crezca según las opciones */
+    min-height: 100px;
+    /* Altura mínima para visualizar múltiples opciones */
+    overflow-y: auto;
+    /* Agrega un scroll si las opciones exceden el espacio disponible */
 }
-.productos .btn-header{
+
+.productos .btn-header {
     margin-top: 2%;
-     align-items: center;
+    align-items: center;
     justify-content: center;
-    
+
+}
+
+.menu-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Espaciado entre los elementos */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+}
+
+.opcion {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    /* Evita que los elementos se reduzcan */
+    border-radius: 50%;
+    /* Hace los div completamente circulares */
+    background: var(--Naranja-melocoton, #FFAA64);
 }
 
 
@@ -357,7 +391,7 @@ footer {
     padding: 1.5rem;
     width: 100%;
     box-sizing: border-box;
-    margin-top: auto;
+    margin-top: 3%;
 }
 
 footer p {
@@ -365,4 +399,3 @@ footer p {
     font-size: 1rem;
     line-height: 1.5;
 }
-
