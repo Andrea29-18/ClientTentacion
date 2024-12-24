@@ -21,40 +21,29 @@
         <main>
             <h1 class="subtitulo">Agregar producto</h1>
             <section class="formulario">
-
-                <form action="#" method="POST" class="form-agregar"
-                    id="form-agregar">
+                <form action="#" method="POST" class="form-agregar" id="form-agregar">
                     <label for="nombreProducto">Nombre del producto:</label>
-                    <input type="text" name="nombreProducto" id="nombreProducto"
-                        placeholder="Nombre del producto" required
-                        class="input-agregar">
-
-                    <label for="cantidadStok">Cantidad en stock:</label>
-                    <input type="number" name="cantidadStok" id="cantidadStok"
-                        placeholder="Cantidad en stock" required
-                        class="input-agregar">
-
-                    <label for="fechaCreacion">Fecha de creación:</label>
-                    <input type="date" name="fechaCreacion" id="fechaCreacion"
-                        required class="input-agregar">
-
+                    <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre del producto" required class="input-agregar">
+            
+                    <label for="cantidadStock">Cantidad en stock:</label>
+                    <input type="number" name="cantidadStock" id="cantidadStock" placeholder="Cantidad en stock" required class="input-agregar">
+            
+                    <label for="precioFinal">Precio final:</label>
+                    <input type="number" name="precioFinal" id="precioFinal" placeholder="Precio final" required class="input-agregar">
+            
                     <label for="fechaVencimiento">Fecha de vencimiento:</label>
-                    <input type="date" name="fechaVencimiento"
-                        id="fechaVencimiento"
-                        required class="input-agregar">
-
+                    <input type="date" name="fechaVencimiento" id="fechaVencimiento" required class="input-agregar">
+            
                     <label for="nombreCategoria">Categoría del producto:</label>
-                    <select name="nombreCategoria" id="nombreCategoria" required
-                        class="input-agregar">
+                    <select name="nombreCategoria" id="nombreCategoria" required class="input-agregar">
                         <!-- Opciones de categorías deben cargarse aquí -->
                     </select>
-
-                    <label for="nombreInsumo">Insumo del producto:</label>
-                    <select name="nombreInsumo" id="nombreInsumo" required
-                        class="input-agregar" multiple>
+            
+                    <label for="nombreInsumo">Insumo(s) del producto:</label>
+                    <select name="nombreInsumo" id="nombreInsumo" multiple required class="input-agregar">
                         <!-- Opciones de insumos deben cargarse aquí -->
-                    </select> 
-
+                    </select>
+            
                     <button type="submit" class="btn-header">Aceptar</button>
                 </form>
             </section>
