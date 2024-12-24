@@ -1,2 +1,2 @@
 # ClientDTentacion
-La parte Frotend de la APITentacion
+La parte Frotend del proyecto D. tentacion 
