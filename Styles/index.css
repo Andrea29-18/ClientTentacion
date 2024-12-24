@@ -1,0 +1,123 @@
+/* General */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: #333333;
+    margin: 0;
+    background-color: #FFFDF4;
+}
+
+header {
+    background-color: #FFB2C7;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Style Script', cursive;
+    font-size: 36px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sección Hero */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-image: url('./Resources/Desserts/hero-postre.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-family: 'Style Script', cursive;
+    font-size: 48px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Sección Productos */
+.productos {
+    padding: 40px;
+    text-align: center;
+}
+
+.productos h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    color: #FF8986;
+    margin-bottom: 20px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #FFFDF4;
+    height: 250px; /* Ajusta el tamaño según tus necesidades */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto__titulo {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    font-size: 18px;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Productos específicos */
+.producto--pastel-chocolate {
+    background-image: url('./Resources/Desserts/pastel-chocolate.png');
+}
+
+.producto--cheesecake-fresa {
+    background-image: url('./Resources/Desserts/cheesecake-fresa.png');
+}
+
+.producto--brownies {
+    background-image: url('./Resources/Desserts/brownies.png');
+}
