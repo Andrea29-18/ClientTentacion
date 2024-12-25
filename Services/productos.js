@@ -1,5 +1,22 @@
-// Importar el objeto CONFIG desde el archivo config.js
-import CONFIG from './config.js';
+// Función para verificar si el token ha expirado
+function isTokenExpired() {
+    const expiration = localStorage.getItem('tokenExpiration');
+    if (!expiration) return true; // Si no hay expiración, asumimos que está expirado
+    return Date.now() > parseInt(expiration, 10); // Verifica si el tiempo actual es mayor al de expiración
+}
+
+// Función para obtener el token desde localStorage
+function getToken() {
+    const token = localStorage.getItem('token');
+    if (!token || isTokenExpired()) {
+        alert('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.');
+        localStorage.removeItem('token');
+        localStorage.removeItem('tokenExpiration');
+        window.location.href = '/login.html';
+        return null;
+    }
+    return token;
+}
 
 // Función para obtener todos los productos
 async function obtenerProductos() {
@@ -72,7 +89,9 @@ function confirmarEliminarProducto(productoId) {
 // Función para eliminar el producto
 async function eliminarProducto(productoId) {
     try {
-        const token = CONFIG.TOKEN; // Obtener el token desde config.js
+        const token = getToken(); // Obtener el token desde localStorage
+        if (!token) return; // Si no hay token, no continuar
+
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,

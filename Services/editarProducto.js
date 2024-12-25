@@ -1,4 +1,22 @@
-import CONFIG from './config.js'; // Si tienes configuraciones importadas
+// Función para verificar si el token ha expirado
+function isTokenExpired() {
+    const expiration = localStorage.getItem('tokenExpiration');
+    if (!expiration) return true; // Si no hay expiración, asumimos que está expirado
+    return Date.now() > parseInt(expiration, 10); // Verifica si el tiempo actual es mayor al de expiración
+}
+
+// Función para obtener el token desde localStorage
+function getToken() {
+    const token = localStorage.getItem('token');
+    if (!token || isTokenExpired()) {
+        alert('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.');
+        localStorage.removeItem('token');
+        localStorage.removeItem('tokenExpiration');
+        window.location.href = '/login.html';
+        return null;
+    }
+    return token;
+}
 
 // Función para obtener el valor de un parámetro en la URL
 function obtenerParametroURL(nombreParametro) {
@@ -9,7 +27,9 @@ function obtenerParametroURL(nombreParametro) {
 // Función para cargar las categorías e insumos
 async function cargarCategoriasEInsumos() {
     try {
-        const token = CONFIG.TOKEN;
+        const token = getToken(); // Obtener el token desde localStorage
+        if (!token) return; // Si no hay token, no continuar
+
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -64,7 +84,9 @@ async function cargarProductoParaEditar() {
     }
 
     try {
-        const token = CONFIG.TOKEN;
+        const token = getToken(); // Obtener el token desde localStorage
+        if (!token) return; // Si no hay token, no continuar
+
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -136,7 +158,9 @@ async function editarProducto(e) {
     };
 
     try {
-        const token = CONFIG.TOKEN; // Obtener el token
+        const token = getToken(); // Obtener el token
+        if (!token) return; // Si no hay token, no continuar
+
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,

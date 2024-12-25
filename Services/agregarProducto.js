@@ -1,9 +1,32 @@
-import CONFIG from './config.js'; // Asegúrate de que este archivo esté correctamente configurado y exportado
+// Función para verificar si el token ha expirado
+function verificarTokenValido() {
+    const token = localStorage.getItem('token');
+    const tokenExpiration = localStorage.getItem('tokenExpiration');
 
+    // Verificar si el token o la fecha de expiración no están en el almacenamiento local
+    if (!token || !tokenExpiration) {
+        console.error('Token no encontrado o expiración no definida.');
+        return false;
+    }
+
+    // Comprobar si el token ha expirado
+    if (Date.now() > tokenExpiration) {
+        console.error('El token ha expirado.');
+        alert('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.');
+        window.location.href = '/HTML/login.html'; // Redirigir al login si el token ha expirado
+        return false;
+    }
+
+    return true;
+}
+
+// Función para agregar producto
 async function agregarProducto(e) {
     e.preventDefault(); // Evitar que el formulario se envíe de manera tradicional
 
-    const token = CONFIG.TOKEN;  // Obtener el token desde el archivo config.js
+    if (!verificarTokenValido()) return; // Verificar si el token es válido antes de hacer la solicitud
+
+    const token = localStorage.getItem('token'); // Obtener el token desde localStorage
     const config = {
         headers: {
             Authorization: `Bearer ${token}`, // Enviar el token en la cabecera
@@ -48,10 +71,12 @@ async function agregarProducto(e) {
 // Asegúrate de que el formulario sea capturado correctamente
 document.getElementById('form-agregar').addEventListener('submit', agregarProducto);
 
-// Cargar las categorías e insumos en el formulario
+// Función para cargar categorías e insumos
 async function cargarCategoriasEInsumos() {
+    if (!verificarTokenValido()) return; // Verificar si el token es válido antes de hacer la solicitud
+
     try {
-        const token = CONFIG.TOKEN;
+        const token = localStorage.getItem('token'); // Obtener el token desde localStorage
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -77,6 +102,7 @@ async function cargarCategoriasEInsumos() {
     }
 }
 
+// Función para cargar las opciones en los select
 function cargarOpciones(selectId, datos, propiedad) {
     const select = document.getElementById(selectId);
 
@@ -94,6 +120,7 @@ function cargarOpciones(selectId, datos, propiedad) {
     }
 }
 
+// Cargar las categorías e insumos cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     cargarCategoriasEInsumos();
 });
