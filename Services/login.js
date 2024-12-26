@@ -10,7 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     }
 
     try {
-        const response = await fetch('http://localhost:3003/login', {
+        const response = await fetch('http://localhost:8080/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // O prueba 'application/x-www-form-urlencoded'
@@ -25,7 +25,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
             const data = await response.json();
             localStorage.setItem('token', data.token);
             alert('Inicio de sesión exitoso');
-            window.location.href = '/HTML/VistaAdministrador.html';
+            window.location.href = 'dashboard.html';
         } else {
             const errorData = await response.json().catch(() => {});
             console.error('Error en el login:', errorData);
