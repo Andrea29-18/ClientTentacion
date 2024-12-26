@@ -10,9 +10,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -62,128 +59,374 @@ table {
     border-spacing: 0;
 }
 
+/*----------------------------------------HASTA AQUI LLEGA EL RESET.CSS---------------------------*/
 header {
-    border: 2px solid red;
+    display: flex;
+    flex-flow: row nowrap;
     height: 100px;
+    background-color: #FF8986;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    margin-bottom: 2%;
 }
 
-h1 {
-
-    color: #FF8986;
-    font-size: 64px;
-    font-family: Style Script;
+.titulo-elegante {
+    color: #FFFDF4;
+    font-size: calc(24px + 4vw);
+    font-family: 'Style Script', cursive;
     font-weight: 400;
-    line-height: 44px;
-    word-wrap: break-word
+    line-height: 1.2;
+    word-wrap: break-word;
 }
 
 body {
     background-color: #FFFDF4;
-}
-
-/*inicio de sesion */
-#login {
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto;
-    margin-top: 170px;
-}
-
-#login p {
-    color: #333333;
-    font-size: 32px;
-    font-family: Roboto;
-    font-weight: 400;
-    line-height: 40px;
-    word-wrap: break-word;
-    margin-top: 20px;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#loginForm {
-
-    width: 100%;
-    max-width: 300px;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    align-items: stretch;
-    margin-top: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    /* Incluye padding y borde en el tamaño */
 }
 
-/* Submit Button */
-.form__submit-button {
-    width: 100%;
-    padding: 12px;
-    background: #FFB2C7;
-    border: none;
-    border-radius: 4px;
-    color: #FFFDF4;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+/* Asegura que el footer se mantenga al final */
+main {
+    flex: 1;
 }
 
-/* Forgot Password Link */
-.form__link {
-    text-align: center;
-    color: #FFB2C7;
-    font-size: 14px;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-
-.form__link:hover {
-    text-decoration: underline;
-}
-
-/* Text Field */
-.text-field__label {
-    width: 100%;
-    background: #FFB2C7;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    padding: 4px 16px;
-    color: #FFFDF4;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.5px;
+/* Estilo del botón "Añadir producto" */
+.btn-header {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 28px;
+    background: #FFCC83;
+    color: #FFF;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 1%;
+}
+
+.btn-header:hover {
+    background: #E69A5B;
+}
+
+/* Estilo para la sección principal */
+.subtitulo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-buscar {
+    display: flex;
+    width: 100%;
+    max-width: 720px;
+    height: 46px;
+    min-width: 360px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 28px;
+    border: 1px solid #FFAA64;
+    background: #FFFDF4;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.input-buscar {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #444;
+    background: transparent;
+    border-radius: 28px 0 0 28px;
+    box-sizing: border-box;
+}
+
+.btn-buscar {
+    height: 100%;
+    padding: 0 16px;
+    border: none;
+    border-radius: 0 28px 28px 0;
+    background-color: #FFAA64;
+    color: #FFFDF4;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buscar:hover {
+    background-color: #E69A5B;
+}
+
+/* Estilos para la tabla de productos */
+.tabla {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1166px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 16px;
+    gap: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla thead {
+    display: table-header-group;
+    width: 100%;
+}
+
+.tabla th {
+    padding: 12px;
+    font-weight: 600;
+    text-align: left;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tabla tbody {
+    width: 100%;
+}
+
+.tabla tbody tr {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
     align-items: center;
 }
 
-.text-field__input {
-    width: 100%;
-    height: 48px;
-    border: none;
-    padding: 8px 16px;
+.tabla td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    color: #333;
-    outline: none;
+}
+
+.tabla tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.tabla thead tr {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+
+.editar-btn {
+    background-color: #FFAA64;
+    color: #FFFDF4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.eliminar-btn {
+    background-color: #FF8986;
+    color: #FFFDF4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*--------------------------agregar producto -------------------------------------------------------*/
+/* Estilos para los labels dentro del formulario */
+/*--------------------------agregar producto -------------------------------------------------------*/
+/* Centrado del formulario en la página */
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    /* Reduce el ancho relativo para pantallas pequeñas */
+    max-width: 25em;
+    /* Limita el ancho máximo a un valor proporcional */
+    min-height: 100vh;
+    /* Asegura que siempre ocupe la altura mínima de la ventana */
+    margin: 0 auto;
+    padding: 2em;
+    /* Espaciado proporcional al tamaño de la fuente */
     box-sizing: border-box;
-    margin-top: -5px;
+}
+
+/* Estilos para los labels */
+.formulario label {
+    display: flex;
+    width: 100%;
+    /* Mantén el ancho relativo */
+    max-width: 15em;
+    /* Evita que se expanda demasiado */
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 1;
+    /* Permite que el label se ajuste al espacio disponible */
+    background-color: #FFFDF4;
+    color: #444444;
+    margin-bottom: 0.5em;
+    /* Espaciado relativo */
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Estilo de los inputs */
+.formulario input, .formulario select {
+    width: 100%;
+    /* Ajusta automáticamente al contenedor */
+    padding: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Botón dentro del formulario */
+.formulario button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    /* Ancho fijo como en .btn-header */
+    height: 50px;
+    /* Altura fija como en .btn-header */
+    border-radius: 28px;
+    /* Borde redondeado similar */
+    background-color: #FF8986;
+    /* Color de fondo original */
+    color: #FFF;
+    /* Texto en blanco */
+    font-size: 16px;
+    /* Tamaño de fuente como en .btn-header */
+    border: none;
+    /* Sin borde */
+    cursor: pointer;
+    margin-bottom: 16px;
+    /* Separación inferior */
+    margin-top: 1%;
+    /* Separación superior */
+    transition: background-color 0.3s ease;
+    /* Animación de transición */
 
 }
 
-.image-container {
-    width: 300px; /* Ancho del contenedor */
-    height: 300px; /* Alto del contenedor */
-    background-image: url('/Resources/Images/mermelada.png'); /* Ruta de la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
-    background-position: center; /* Centra la imagen dentro del contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    border-radius: 15px; /* Esquinas redondeadas (opcional) */
-    margin: 20px auto; /* Centrado con márgenes automáticos */
+#nombreInsumo {
+    height: auto;
+    /* Permite que crezca según las opciones */
+    min-height: 100px;
+    /* Altura mínima para visualizar múltiples opciones */
+    overflow-y: auto;
+    /* Agrega un scroll si las opciones exceden el espacio disponible */
+}
+
+.productos .btn-header {
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Espaciado entre los elementos */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+
+}
+
+
+.opcion {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 50%; /* Hace los div completamente circulares */
+    background: #FAC2D1;
+    position: relative; /* Necesario para posicionar elementos internos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza imagen y texto en columna */
+    overflow: hidden; /* Asegura que nada salga del círculo */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+.opcion img {
+    width: 70%; /* Ajusta el tamaño de la imagen según necesidad */
+    height: auto;
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio sin deformarse */
+  }
+
+  .opcion:hover {
+    background: #FF8986;
+    transition: 0.3s ease; /* Cambia el color de fondo al pasar el ratón */
+  }
+
+  
+  .opcion span {
+    position: absolute;
+    bottom: 10px; /* Coloca el texto en la parte inferior del círculo */
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+
+footer {
+    background-color: #FFCC83;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 3%;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
 }
