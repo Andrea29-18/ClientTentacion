@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png"
+            href="/Resources/Images/pastel-icon.png">
+        <!-- Agregar Axios desde el CDN -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <link rel="stylesheet" href="/Styles/style.css">
+        <title>Agregar insumo</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="titulo-elegante">D.Tentación </h1>
+            <button class="btn-header">Pedidos pendientes</button>
+            <button class="btn-header">Enviar Pedido</button>
+        </header>
+        <main>
+            <h1 class="subtitulo">Agregar insumo</h1>
+            <section class="formulario">
+                <form action="#" method="POST" class="form-agregar" id="form-agregar-insumo">
+                    <label for="nombreInsumo">Nombre del insumo:</label>
+                    <input type="text" name="nombreInsumo" id="nombreInsumo" placeholder="Nombre del insumo" required class="input-agregar">
+                    
+                    <label for="cantidadNeta">Cantidad neta:</label>
+                    <input type="number" name="cantidadNeta" id="cantidadNeta" placeholder="Cantidad neta" required class="input-agregar">
+                    
+                    <label for="precioNeto">Precio neto:</label>
+                    <input type="number" name="precioNeto" id="precioNeto" placeholder="Precio neto" required class="input-agregar">
+                    
+                    <button type="submit" class="btn-header">Aceptar</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <p>&copy; 2024 D.Tentacion. Todos los derechos reservados.</p>
+                <p>Desarrollado por <strong>LULA Code</strong>.</p>
+            </div>
+        </footer>
+        <script type="module" src="/Services/agregarInsumo.js"></script>
+    </body>
+
+</html>

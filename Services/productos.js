@@ -37,7 +37,7 @@ async function obtenerProductos() {
 
 // Función para renderizar productos en la tabla
 function mostrarProductos(productos) {
-    const tablaBody = document.querySelector('#tabla-productos tbody');
+    const tablaBody = document.querySelector('.tabla tbody');
     tablaBody.innerHTML = ''; // Limpiar la tabla
 
     productos.forEach(producto => {
