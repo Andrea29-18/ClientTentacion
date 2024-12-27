@@ -10,7 +10,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     }
 
     try {
-        const response = await fetch('http://localhost:8080/login', {
+        const response = await fetch('http://localhost:3003/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // O prueba 'application/x-www-form-urlencoded'

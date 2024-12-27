@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Costeo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calcular Costeo</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form id="costeo-form">
+                <h2>Ingresar Insumos Utilizados</h2>
+                <div id="insumos-container">
+                    <!-- Insumo input template -->
+                    <div class="insumo-item">
+                        <label for="insumo-id-0">ID del Insumo:</label>
+                        <input type="text" id="insumo-id-0" name="insumoId" placeholder="ID del Insumo" required>
+                        <label for="cantidad-0">Cantidad Utilizada:</label>
+                        <input type="number" id="cantidad-0" name="cantidadUtilizada" placeholder="Cantidad" required>
+                    </div>
+                </div>
+                <button type="button" id="add-insumo-btn">Agregar Otro Insumo</button>
+                <button type="submit">Calcular Costeo</button>
+            </form>
+            <div id="result-container">
+                <h2>Resultado del Costeo</h2>
+                <p id="costo-total">Costo Total: $0.00</p>
+            </div>
+        </div>
+    </main>
+    <script src="calcularCosteo.js"></script>
+</body>
+</html>
