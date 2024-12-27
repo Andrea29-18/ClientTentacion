@@ -25,6 +25,7 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 nav ul li a {
@@ -43,7 +44,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     height: 600px;
-    background-image: url('./Resources/Desserts/hero-postre.png'); /* Imagen de fondo */
+    background-image: url('/Resources/Postres/pastel3Leches.png'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -111,13 +112,13 @@ nav ul li a:hover {
 
 /* Productos específicos */
 .producto--pastel-chocolate {
-    background-image: url('./Resources/Desserts/pastel-chocolate.png');
+    background-image: url('/Resources/Postres/besosDeNuez.png');
 }
 
 .producto--cheesecake-fresa {
-    background-image: url('./Resources/Desserts/cheesecake-fresa.png');
+    background-image: url('/Resources/Postres/mazafinas.png');
 }
 
 .producto--brownies {
-    background-image: url('./Resources/Desserts/brownies.png');
+    background-image: url('/Resources/Postres/pastel3Leches.png');
 }

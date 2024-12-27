@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png"
+            href="/Resources/Images/pastel-icon.png">
+        <!-- Agregar Axios desde el CDN -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <link rel="stylesheet" href="/Styles/style.css">
+        <title>Agregar producto</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="titulo-elegante">D.Tentación </h1>
+            <button class="btn-header">Pedidos pendientes</button>
+            <button class="btn-header">Enviar Pedido</button>
+        </header>
+        <main>
+            <h1 class="subtitulo">Agregar producto</h1>
+            <section class="formulario">
+                <form action="#" method="POST" class="form-agregar" id="form-agregar">
+                    <label for="nombreProducto">Nombre del producto:</label>
+                    <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre del producto" required class="input-agregar">
+            
+                    <label for="cantidadStock">Cantidad en stock:</label>
+                    <input type="number" name="cantidadStock" id="cantidadStock" placeholder="Cantidad en stock" required class="input-agregar">
+            
+                    <label for="precioFinal">Precio final:</label>
+                    <input type="number" name="precioFinal" id="precioFinal" placeholder="Precio final" required class="input-agregar">
+            
+                    <label for="fechaVencimiento">Fecha de vencimiento:</label>
+                    <input type="date" name="fechaVencimiento" id="fechaVencimiento" required class="input-agregar">
+            
+                    <label for="nombreCategoria">Categoría del producto:</label>
+                    <select name="nombreCategoria" id="nombreCategoria" required class="input-agregar">
+                        <!-- Opciones de categorías deben cargarse aquí -->
+                    </select>
+            
+                    <label for="nombreInsumo">Insumo(s) del producto:</label>
+                    <select name="nombreInsumo" id="nombreInsumo" multiple required class="input-agregar">
+                        <!-- Opciones de insumos deben cargarse aquí -->
+                    </select>
+            
+                    <button type="submit" class="btn-header">Aceptar</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <p>&copy; 2024 D.Tentacion. Todos los derechos reservados.</p>
+                <p>Desarrollado por <strong>LULA Code</strong>.</p>
+            </div>
+        </footer>
+        <script type="module" src="/Services/agregarProducto.js"></script>
+    </body>
+
+</html>
