@@ -7,8 +7,8 @@ body {
 }
 
 header {
-    background-color: #ff8c42;
-    color: white;
+    background-color: #FF8986;
+    color: rgb(197, 183, 183);
     padding: 20px;
     text-align: center;
 }
@@ -29,6 +29,10 @@ h2 {
 
 .insumo-item {
     margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 label {
@@ -37,7 +41,8 @@ label {
     font-weight: bold;
 }
 
-input {
+input[type="text"],
+input[type="number"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -66,4 +71,40 @@ button:hover {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
+}
+
+.sugerencias-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.sugerencia {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.sugerencia:hover {
+    background-color: #f0f0f0;
+}
+
+.sugerencias-container div {
+    border-radius: 0 0 5px 5px;
+}
+
+input:focus {
+    border-color: #FF8986;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 137, 134, 0.5);
+}
+
+.insumo-nombre {
+    font-weight: normal;
+}
+
+.cantidad-utilizada {
+    font-weight: normal;
 }
