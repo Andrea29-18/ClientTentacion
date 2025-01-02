@@ -13,7 +13,13 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     button.disabled = true;
     button.innerText = 'Cargando...';
 
+
+    
+
     try {
+
+        
+
         const response = await fetch('http://localhost:3003/login', {
             method: 'POST',
             headers: {
