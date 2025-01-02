@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png"
+            href="/Resources/Images/pastel-icon.png">
+        <!-- Agregar Axios desde el CDN -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <link rel="stylesheet" href="/Styles/style.css">
+        <title>Editar usuario</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="titulo-elegante">D.Tentación </h1>
+            <button class="btn-header">Pedidos pendientes</button>
+            <button class="btn-header">Enviar Pedido</button>
+        </header>
+        <main>
+            <h1 class="subtitulo">Editar usuario</h1>
+            <section class="formulario">
+                <form method="POST" id="user-form">
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div>
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                    </div>
+                    <div>
+                        <label for="usuario">Usuario (nombre de usuario):</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                    </div>
+                    <div>
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                    </div>
+                    <div>
+                        <label for="rol">Rol:</label>
+                        <select id="rol" name="rol" required>
+                            <option value="administrador">Administrador</option>
+                            <option value="usuario">Usuario</option>
+                            <option value="moderador">Moderador</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" id="btn-submit">Enviar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <p>&copy; 2024 D.Tentacion. Todos los derechos reservados.</p>
+                <p>Desarrollado por <strong>LULA Code</strong>.</p>
+            </div>
+        </footer>
+        <script src="/Services/Usuarios/agregarUsuario.js"></script>
+    </body>
+</html>
