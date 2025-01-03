@@ -10,7 +10,7 @@ async function cargarInsumos() {
     }
 
     try {
-        const response = await axios.get("http://localhost:3003/insumos", {
+        const response = await axios.get("https://apitentacion.onrender.com/insumos", {
             headers: { "Authorization": `Bearer ${token}` },
         });
         insumos = response.data;
@@ -102,7 +102,7 @@ document.getElementById("costeo-form").addEventListener("submit", async (e) => {
             return;
         }
 
-        const response = await axios.post("http://localhost:3003/insumos/costeo", {
+        const response = await axios.post("https://apitentacion.onrender.com/insumos/costeo", {
             insumosUtilizados,
         }, {
             headers: {

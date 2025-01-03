@@ -44,7 +44,7 @@ async function agregarInsumo(e) {
     };
 
     try {
-        const response = await axios.post('http://localhost:3003/insumos', insumo, config);
+        const response = await axios.post('https://apitentacion.onrender.com/insumos', insumo, config);
 
         if (response.status === 201) {
             console.log('Insumo agregado correctamente:', response.data);

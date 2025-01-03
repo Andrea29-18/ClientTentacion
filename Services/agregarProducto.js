@@ -53,7 +53,7 @@ async function agregarProducto(e) {
     };
 
     try {
-        const response = await axios.post('http://localhost:3003/productos', producto, config);
+        const response = await axios.post('https://apitentacion.onrender.com/productos', producto, config);
 
         if (response.status === 201) {
             console.log('Producto agregado correctamente:', response.data);
@@ -84,8 +84,8 @@ async function cargarCategoriasEInsumos() {
         };
 
         const [categoriasResponse, insumosResponse] = await Promise.all([  // Obtener categorías e insumos
-            axios.get('http://localhost:3003/categoriasProducto', config),
-            axios.get('http://localhost:3003/insumos', config),
+            axios.get('https://apitentacion.onrender.com/categoriasProducto', config),
+            axios.get('https://apitentacion.onrender.com/insumos', config),
         ]);
 
         if (categoriasResponse.status === 200 && insumosResponse.status === 200) {

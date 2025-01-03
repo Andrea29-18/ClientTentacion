@@ -21,7 +21,7 @@ async function obtenerInsumos() {
             },
         };
 
-        const response = await axios.get('http://localhost:3003/insumos', config);
+        const response = await axios.get('https://apitentacion.onrender.com/insumos', config);
 
         if (response.status === 200) {
             const insumos = response.data;
@@ -97,7 +97,7 @@ async function eliminarInsumo(insumoId) {
             },
         };
 
-        const response = await axios.delete(`http://localhost:3003/insumos/${insumoId}`, config);
+        const response = await axios.delete(`https://apitentacion.onrender.com/insumos/${insumoId}`, config);
 
         if (response.status === 200) {
             alert('Insumo eliminado con éxito.');
