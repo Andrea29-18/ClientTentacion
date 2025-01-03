@@ -1,22 +1,4 @@
-// Función para verificar si el token ha expirado
-function isTokenExpired() {
-    const expiration = localStorage.getItem('tokenExpiration');
-    if (!expiration) return true; // Si no hay expiración, asumimos que está expirado
-    return Date.now() > parseInt(expiration, 10); // Verifica si el tiempo actual es mayor al de expiración
-}
-
-// Función para obtener el token desde localStorage
-function getToken() {
-    const token = localStorage.getItem('token');
-    if (!token || isTokenExpired()) {
-        alert('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.');
-        localStorage.removeItem('token');
-        localStorage.removeItem('tokenExpiration');
-        window.location.href = '/login.html';
-        return null;
-    }
-    return token;
-}
+import CONFIG from './config.js'; // Si tienes configuraciones importadas
 
 // Función para obtener el valor de un parámetro en la URL
 function obtenerParametroURL(nombreParametro) {
@@ -27,9 +9,7 @@ function obtenerParametroURL(nombreParametro) {
 // Función para cargar las categorías e insumos
 async function cargarCategoriasEInsumos() {
     try {
-        const token = getToken(); // Obtener el token desde localStorage
-        if (!token) return; // Si no hay token, no continuar
-
+        const token = CONFIG.TOKEN;
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -37,8 +17,8 @@ async function cargarCategoriasEInsumos() {
         };
 
         const [categoriasResponse, insumosResponse] = await Promise.all([  
-            axios.get('https://apitentacion.onrender.com/categoriasProducto', config),
-            axios.get('https://apitentacion.onrender.com/insumos', config),
+            axios.get('http://localhost:3003/categoriasProducto', config),
+            axios.get('http://localhost:3003/insumos', config),
         ]);
 
         if (categoriasResponse.status === 200 && insumosResponse.status === 200) {
@@ -84,9 +64,7 @@ async function cargarProductoParaEditar() {
     }
 
     try {
-        const token = getToken(); // Obtener el token desde localStorage
-        if (!token) return; // Si no hay token, no continuar
-
+        const token = CONFIG.TOKEN;
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -94,7 +72,7 @@ async function cargarProductoParaEditar() {
         };
 
         // Obtener los datos del producto
-        const response = await axios.get(`https://apitentacion.onrender.com/productos/${productoId}`, config);
+        const response = await axios.get(`http://localhost:3003/productos/${productoId}`, config);
 
         if (response.status === 200) {
             const producto = response.data;
@@ -158,9 +136,7 @@ async function editarProducto(e) {
     };
 
     try {
-        const token = getToken(); // Obtener el token
-        if (!token) return; // Si no hay token, no continuar
-
+        const token = CONFIG.TOKEN; // Obtener el token
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -169,7 +145,7 @@ async function editarProducto(e) {
         };
 
         // Realizar la solicitud PUT para actualizar el producto
-        const response = await axios.put(`https://apitentacion.onrender.com/productos/${productoId}`, productoActualizado, config);
+        const response = await axios.put(`http://localhost:3003/productos/${productoId}`, productoActualizado, config);
 
         if (response.status === 200) {
             console.log('Producto actualizado correctamente:', response.data);

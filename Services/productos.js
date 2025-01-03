@@ -1,27 +1,10 @@
-// Función para verificar si el token ha expirado
-function isTokenExpired() {
-    const expiration = localStorage.getItem('tokenExpiration');
-    if (!expiration) return true; // Si no hay expiración, asumimos que está expirado
-    return Date.now() > parseInt(expiration, 10); // Verifica si el tiempo actual es mayor al de expiración
-}
-
-// Función para obtener el token desde localStorage
-function getToken() {
-    const token = localStorage.getItem('token');
-    if (!token || isTokenExpired()) {
-        alert('Tu sesión ha expirado. Por favor, inicia sesión nuevamente.');
-        localStorage.removeItem('token');
-        localStorage.removeItem('tokenExpiration');
-        window.location.href = '/login.html';
-        return null;
-    }
-    return token;
-}
+// Importar el objeto CONFIG desde el archivo config.js
+import CONFIG from './config.js';
 
 // Función para obtener todos los productos
 async function obtenerProductos() {
     try {
-        const response = await axios.get('https://apitentacion.onrender.com/productos'); 
+        const response = await axios.get('http://localhost:3003/productos'); 
 
         if (response.status === 200) {
             const productos = response.data;
@@ -37,7 +20,7 @@ async function obtenerProductos() {
 
 // Función para renderizar productos en la tabla
 function mostrarProductos(productos) {
-    const tablaBody = document.querySelector('.tabla tbody');
+    const tablaBody = document.querySelector('#tabla-productos tbody');
     tablaBody.innerHTML = ''; // Limpiar la tabla
 
     productos.forEach(producto => {
@@ -89,16 +72,14 @@ function confirmarEliminarProducto(productoId) {
 // Función para eliminar el producto
 async function eliminarProducto(productoId) {
     try {
-        const token = getToken(); // Obtener el token desde localStorage
-        if (!token) return; // Si no hay token, no continuar
-
+        const token = CONFIG.TOKEN; // Obtener el token desde config.js
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
         };
 
-        const response = await axios.delete(`hhttps://apitentacion.onrender.com/productos/${productoId}`, config);
+        const response = await axios.delete(`http://localhost:3003/productos/${productoId}`, config);
 
         if (response.status === 200) {
             // Mostrar el mensaje de éxito

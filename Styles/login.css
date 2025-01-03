@@ -81,24 +81,21 @@ body {
     background-color: #FFFDF4;
 }
 
-
 /*inicio de sesion */
 #login {
     border-radius: 10px;
     padding: 20px;
-    width: 100%;
-    max-width: 400px;
+    width: 300px;
     margin: 0 auto;
-    margin-top: 10vh;
-    font-family: 'Roboto', sans-serif;
+    margin-top: 170px;
 }
 
 #login p {
     color: #333333;
-    font-size: 2rem; /* Usar unidades relativas */
+    font-size: 32px;
     font-family: Roboto;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 40px;
     word-wrap: break-word;
     margin-top: 20px;
 }
@@ -109,12 +106,12 @@ input[type="text"], input[type="password"] {
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 1rem; /* Unidades relativas */
-    
 }
 
 #loginForm {
+
     width: 100%;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -130,7 +127,7 @@ input[type="text"], input[type="password"] {
     border: none;
     border-radius: 4px;
     color: #FFFDF4;
-    font-size: 1rem; /* Unidades relativas */
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -140,11 +137,11 @@ input[type="text"], input[type="password"] {
 .form__link {
     text-align: center;
     color: #FFB2C7;
-    font-size: 0.9rem; /* Unidades relativas */
+    font-size: 14px;
     text-decoration: none;
     margin-top: 10px;
-    font-family: 'Roboto', sans-serif;
 }
+
 
 .form__link:hover {
     text-decoration: underline;
@@ -158,13 +155,12 @@ input[type="text"], input[type="password"] {
     border-top-right-radius: 4px;
     padding: 4px 16px;
     color: #FFFDF4;
-    font-size: 1rem; /* Unidades relativas */
+    font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .text-field__input {
@@ -172,24 +168,20 @@ input[type="text"], input[type="password"] {
     height: 48px;
     border: none;
     padding: 8px 16px;
-    font-size: 1rem; /* Unidades relativas */
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
     color: #333;
     outline: none;
     box-sizing: border-box;
     margin-top: -5px;
+
 }
 
-/* Contenedor de la imagen */
+
 .image-container {
+
     width: 100%;
-    height: 500px; /* Ajusta la altura según el tamaño de la imagen */
-    background-image: url('/Resources/Images/mermelada.png');
-    background-size: contain; /* Ajusta la imagen dentro del contenedor */
-    background-repeat: no-repeat;
-    background-position: right bottom; /* Alinea la imagen a la parte derecha y abajo */
+    height: 100%;
     display: flex;
-    justify-content: flex-end; /* Alinea la imagen al lado derecho */
-    align-items: flex-end; /* Coloca la imagen al fondo de la pantalla */
-    margin-top: 20px; /* Ajuste opcional para el espaciado entre el formulario y la imagen */
+    justify-content: right;
 }
