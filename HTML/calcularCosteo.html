@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+            href="/Resources/Images/pastel-icon.png">
+    <script
+    src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Costeo de Insumos</title>
+    <link rel="stylesheet" href="/Styles/styles.css">
+</head>
+<body>
+    <main>
+        <h1>Calculadora de Costeo</h1>
+        <form id="costeo-form">
+            <section id="insumos-container">
+                <h2>Insumos</h2>
+                <!-- Se agregarán insumos dinámicamente aquí -->
+            </section>
+            <button type="button" id="add-insumo-btn">Agregar Insumo</button>
+            <button type="submit">Calcular Costeo</button>
+        </form>
+        <p id="costo-total">Costo Total: $0.00</p>
+    </main>
+    <script src="/Services/calcularCosteo.js"></script>
+</body>
+</html>
