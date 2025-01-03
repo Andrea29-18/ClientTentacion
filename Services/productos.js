@@ -21,7 +21,7 @@ function getToken() {
 // Función para obtener todos los productos
 async function obtenerProductos() {
     try {
-        const response = await axios.get('http://localhost:3003/productos'); 
+        const response = await axios.get('https://apitentacion.onrender.com/productos'); 
 
         if (response.status === 200) {
             const productos = response.data;
@@ -98,7 +98,7 @@ async function eliminarProducto(productoId) {
             },
         };
 
-        const response = await axios.delete(`http://localhost:3003/productos/${productoId}`, config);
+        const response = await axios.delete(`hhttps://apitentacion.onrender.com/productos/${productoId}`, config);
 
         if (response.status === 200) {
             // Mostrar el mensaje de éxito

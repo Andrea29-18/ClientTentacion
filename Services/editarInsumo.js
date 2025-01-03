@@ -45,7 +45,7 @@ async function cargarInsumoParaEditar() {
         };
 
         // Obtener los datos del insumo
-        const response = await axios.get(`http://localhost:3003/insumos/${insumoId}`, config);
+        const response = await axios.get(`https://apitentacion.onrender.com/insumos/${insumoId}`, config);
 
         if (response.status === 200) {
             const insumo = response.data;
@@ -96,7 +96,7 @@ async function editarInsumo(e) {
         };
 
         // Realizar la solicitud PUT para actualizar el insumo
-        const response = await axios.put(`http://localhost:3003/insumos/${insumoId}`, insumoActualizado, config);
+        const response = await axios.put(`https://apitentacion.onrender.com/insumos/${insumoId}`, insumoActualizado, config);
 
         if (response.status === 200) {
             console.log('Insumo actualizado correctamente:', response.data);

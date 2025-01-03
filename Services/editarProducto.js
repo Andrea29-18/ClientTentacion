@@ -37,8 +37,8 @@ async function cargarCategoriasEInsumos() {
         };
 
         const [categoriasResponse, insumosResponse] = await Promise.all([  
-            axios.get('http://localhost:3003/categoriasProducto', config),
-            axios.get('http://localhost:3003/insumos', config),
+            axios.get('https://apitentacion.onrender.com/categoriasProducto', config),
+            axios.get('https://apitentacion.onrender.com/insumos', config),
         ]);
 
         if (categoriasResponse.status === 200 && insumosResponse.status === 200) {
@@ -94,7 +94,7 @@ async function cargarProductoParaEditar() {
         };
 
         // Obtener los datos del producto
-        const response = await axios.get(`http://localhost:3003/productos/${productoId}`, config);
+        const response = await axios.get(`https://apitentacion.onrender.com/productos/${productoId}`, config);
 
         if (response.status === 200) {
             const producto = response.data;
@@ -169,7 +169,7 @@ async function editarProducto(e) {
         };
 
         // Realizar la solicitud PUT para actualizar el producto
-        const response = await axios.put(`http://localhost:3003/productos/${productoId}`, productoActualizado, config);
+        const response = await axios.put(`https://apitentacion.onrender.com/productos/${productoId}`, productoActualizado, config);
 
         if (response.status === 200) {
             console.log('Producto actualizado correctamente:', response.data);
