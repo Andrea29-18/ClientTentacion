@@ -70,10 +70,10 @@ nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.imagen-volteado {
-    background-image: url('./Resources/Desserts/volteadoDePiña.png');
-}
-
-.imagen-chef {
-    background-image: url('./Resources/Chef/chef.png');
+.producto.producto--volteado-piña {
+    background-image: url('../Resources/Postres/volteadoPiña.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
 }
