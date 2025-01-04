@@ -111,14 +111,14 @@ nav ul li a:hover {
 }
 
 /* Productos específicos */
-.producto--pastel-chocolate {
-    background-image: url('/Resources/Postres/besosDeNuez.png');
+.producto--tronco-navideño {
+    background-image: url('/Resources/Postres/troncoNavideño.png');
 }
 
-.producto--cheesecake-fresa {
-    background-image: url('/Resources/Postres/mazafinas.png');
+.producto--rosca-reyes {
+    background-image: url('/Resources/Postres/Rosca.png');
 }
 
-.producto--brownies {
-    background-image: url('/Resources/Postres/pastel3Leches.png');
+.producto--galletas-jengibre {
+    background-image: url('/Resources/Postres/jengibre.png');
 }

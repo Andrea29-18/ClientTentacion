@@ -1,12 +1,3 @@
-/* 
-    Estilos base para el proyecto
-    -----------------------------------
-    Este archivo contiene los estilos base para el proyecto. 
-    Estos estilos son aplicados a todos los elementos HTML5 
-    y eliminan los márgenes, paddings y bordes predeterminados 
-    de los navegadores.
-*/
-/* Elimina márgenes, paddings y bordes predeterminados */
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -429,4 +420,12 @@ footer p {
     margin: 0.5rem 0;
     font-size: 1rem;
     line-height: 1.5;
+}
+
+.producto.producto--volteado-piña {
+    background-image: url('../Resources/Postres/volteadoPiña.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
 }
