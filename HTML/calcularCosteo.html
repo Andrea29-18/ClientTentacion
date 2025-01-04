@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png"
-            href="/Resources/Images/pastel-icon.png">
-    <script
-    src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="icon" type="image/png" href="/Resources/Images/pastel-icon.png">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Costeo de Insumos</title>
-
     <link rel="stylesheet" href="../Styles/style.css">
-
 </head>
 <body>
     <main>
@@ -18,12 +14,19 @@
         <form id="costeo-form">
             <section id="insumos-container">
                 <h2>Insumos</h2>
-                <!-- Se agregarán insumos dinámicamente aquí -->
             </section>
             <button type="button" id="add-insumo-btn">Agregar Insumo</button>
+            <label for="ganancia-multiplicador">Margen de ganancia:</label>
+            <select id="ganancia-multiplicador">
+                <option value="2">x2</option>
+                <option value="3">x3</option>
+                <option value="4">x4</option>
+            </select>
             <button type="submit">Calcular Costeo</button>
         </form>
-        <p id="costo-total">Costo Total: $0.00</p>
+        <p id="costo-gasto">Total Gastado: $0.00</p>
+        <p id="costo-utilizado">Total Utilizado: $0.00</p>
+        <p id="precio-final">Precio Final: $0.00</p>
     </main>
     <script src="/Services/calcularCosteo.js"></script>
 </body>
