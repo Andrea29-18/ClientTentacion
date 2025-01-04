@@ -1,16 +1,5 @@
-/* 
-    Estilos base para el proyecto
-    -----------------------------------
-    Este archivo contiene los estilos base para el proyecto. 
-    Estos estilos son aplicados a todos los elementos HTML5 
-    y eliminan los márgenes, paddings y bordes predeterminados 
-    de los navegadores.
-*/
-/* Elimina márgenes, paddings y bordes predeterminados */
 @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-
 
 
 html, body, div, span, applet, object, iframe,
@@ -62,25 +51,55 @@ table {
     border-spacing: 0;
 }
 
-header {
-    border: 2px solid red;
-    height: 100px;
-}
-
-h1 {
-
-    color: #FF8986;
-    font-size: 64px;
-    font-family: Style Script;
-    font-weight: 400;
-    line-height: 44px;
-    word-wrap: break-word
-}
-
+/* General */
 body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
+    color: #333333;
+    margin: 0;
     background-color: #FFFDF4;
 }
 
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100px;
+    background-color: #FF8986;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    margin-bottom: 2%;
+}
+
+.titulo-elegante {
+    color: #FFFDF4;
+    font-size: calc(24px + 4vw);
+    font-family: 'Style Script', cursive;
+    font-weight: 400;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+header h1 {
+    font-family: 'Style Script', cursive;
+    font-size: 36px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
 
 /*inicio de sesion */
 #login {
