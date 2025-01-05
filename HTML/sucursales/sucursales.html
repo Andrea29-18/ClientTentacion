@@ -10,7 +10,7 @@
             src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         <link rel="stylesheet" href="/Styles/style.css">
-        <title>Insumos</title>
+        <title>Sucursales</title>
     </head>
     <body>
         <header>
@@ -20,31 +20,32 @@
         </header>
         <main>
         <section class="sub-header">
-            <h1 class="subtitulo">Gestión de insumos</h1>
+            <h1 class="subtitulo">Gestión de Sucursales</h1>
             <form action="#" method="GET" class="form-buscar" id="form-buscar">
                 <input type="text" name="query" id="input-buscar"
-                    placeholder="Buscar insumos..." required
+                    placeholder="Buscar sucursales..." required
                     class="input-buscar">
                 <button type="submit" class="btn-buscar">Buscar</button>
             </form>
 
         </section>
-        
-        <button class="btn-header" onclick="location.href='/HTML/agregarInsumo.html'">Añadir insumo</button>
+
+        <button class="btn-header" onclick="location.href='/HTML/sucursales/agregarSucursal.html'">Agregar sucursal</button>
 
 
         <section class="tabla">
             <table>
                 <thead>
                     <tr>
-                        <th>Insumo </th>
-                        <th>Cantidad neta </th>
-                        <th>Precio neto</th>
+                        <th>Nombre </th>
+                        <th>Ubicacion</th>
+                        <th>Longitud</th>
+                        <th>Latitud</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Aquí se llenarán los productos -->
+                    <!-- Aquí se llenarán las sucursales -->
                 </tbody>
             </table>
         </section>
@@ -55,6 +56,6 @@
                 <p>Desarrollado por <strong>LULA Code</strong>.</p>
             </div>
         </footer>
-        <script  type="module" src="/Services/insumos.js"></script>
+        <script  type="module" src="/Services/sucursales/sucursales.js"></script>
     </body>
 </html>
