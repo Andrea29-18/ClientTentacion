@@ -429,3 +429,69 @@ footer p {
     width: 450px;
     height: 450px;
 }
+
+/*--------------------------Producto Generales -------------------------------------------------------*/
+
+.producto.producto--mazafinas-galletas {
+    background-image: url('../Resources/Postres/mazafinas.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--besos-nuez {
+    background-image: url('../Resources/Postres/besosDeNuez.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--pastisetas-galleta {
+    background-image: url('../Resources/Postres/pastisetas.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--galleta-jengibre {
+    background-image: url('../Resources/Postres/jengibre.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--galleta-manzana {
+    background-image: url('../Resources/Postres/manzanaGalletas.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--galleta-mantequilla {
+    background-image: url('../Resources/Postres/galletaMantequilla.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--pan-elote {
+    background-image: url('../Resources/Postres/PanElote.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--pan-pina {
+    background-image: url('../Resources/Postres/volteadoPina.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
