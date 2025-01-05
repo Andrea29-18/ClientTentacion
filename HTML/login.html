@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../Resources/Images/mermelada.png">
-        <link rel="stylesheet" href="../Styles/login.css">
-        <link rel="icon" type="image/png"
-        href="/Resources/Images/pastel-icon.png">
-        <title>Inicio de sesion </title>
-    </head>
-    <body>
-        <main>
-            <div id="login">
-                <h1 id="tituloLogin">D. Tentacion</h1>
-                <p>Inicia sesión con tu <br />cuenta de usuario</p>
-                <form id="loginForm">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" class="text-field__input" name="usuario"
-                        id="usuario" placeholder="Usuario" required>
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="text-field__input"
-                        name="password" id="password" placeholder="Contraseña"
-                        required>
-                    <button type="submit" class="form__submit-button">Iniciar
-                        sesión</button> <!-- Usamos un botón aquí -->
-                    <a href="/HTML/aboutMe.html" class="form__link">¿Olvidaste tu
-                        contraseña?</a>
-                </form>
 
-            </div>
-            <div class="image-container">
-              
-            </div>
-        </main>
-        <script type="module" src="/Services/login.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png"
+        href="/Resources/Images/pastel-icon.png">
+    <title href="../index.html">D.Tentación</title>
+    
+    <link rel="stylesheet" href="../Styles/login.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>D.Tentación</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./aboutMe.html">Sobre Nosotros</a></li>
+                <li><a href="./login.html">Inicio de Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="login">
+            <h1 id="tituloLogin">D. Tentacion</h1>
+            <p>Inicia sesión con tu <br />cuenta de usuario</p>
+            <form id="loginForm">
+                <label for="usuario">Usuario</label>
+                <input type="text" class="text-field__input" name="usuario" id="usuario" placeholder="Usuario" required>
+                <label for="password">Contraseña</label>
+                <input type="password" class="text-field__input" name="password" id="password" placeholder="Contraseña"
+                    required>
+                <button type="submit" class="form__submit-button">Iniciar
+                    sesión</button> <!-- Usamos un botón aquí -->
+                <a href="/HTML/aboutMe.html" class="form__link">¿Olvidaste tu
+                    contraseña?</a>
+            </form>
+
+        </div>
+        <div class="image-container">
+
+        </div>
+    </main>
+    <script type="module" src="/Services/login.js"></script>
+</body>
+
 </html>
