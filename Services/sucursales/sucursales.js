@@ -1,8 +1,48 @@
+// Función para eliminar una sucursal
+async function eliminarSucursal(id) {
+    console.log("ID a eliminar:", id); // Log para depuración
+
+    if (!id || !id.match(/^[0-9a-fA-F]{24}$/)) {
+        console.error("Formato de ID no válido:", id);
+        alert("El formato del ID no es válido.");
+        return;
+    }
+
+    const token = getToken(); // Obtener el token
+    if (!token) return; // Si no hay token, salimos de la función
+
+    try {
+        // Realizar la solicitud DELETE con el token en los encabezados
+        const response = await fetch(`https://apitentacion.onrender.com/sucursales/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Error al eliminar la sucursal:", errorData);
+            alert(`Error al eliminar la sucursal: ${errorData.message}`);
+            return;
+        }
+
+        const data = await response.json();
+        console.log("Sucursal eliminada:", data);
+        alert('Sucursal eliminada exitosamente.');
+        cargarSucursales(); // Recargar la lista de sucursales
+    } catch (error) {
+        console.error("Error al realizar la solicitud:", error);
+        alert('Error al realizar la solicitud. Inténtalo de nuevo más tarde.');
+    }
+}
+
 // Función para verificar si el token ha expirado
 function isTokenExpired() {
     const expiration = localStorage.getItem('tokenExpiration');
-    if (!expiration) return true; // Si no hay expiración, asumimos que está expirado
-    return Date.now() > parseInt(expiration, 10); // Verifica si el tiempo actual es mayor al de expiración
+    if (!expiration) return true;
+    return Date.now() > parseInt(expiration, 10);
 }
 
 // Función para obtener el token desde localStorage
@@ -30,18 +70,12 @@ async function obtenerUbicacionPorId(ubicacionId) {
     }
 
     try {
-        const response = await axios.get(`https://apitentacion.onrender.com/ubicaciones/${ubicacionId}`);
-        if (response.status === 200) {
-            return response.data;
+        const response = await fetch(`https://apitentacion.onrender.com/ubicaciones/${ubicacionId}`);
+        if (response.ok) {
+            return await response.json();
         }
     } catch (error) {
-        if (error.response) {
-            console.error("Error de respuesta del servidor:", error.response.status, error.response.data);
-        } else if (error.request) {
-            console.error("No se recibió respuesta del servidor:", error.request);
-        } else {
-            console.error("Error al configurar la solicitud:", error.message);
-        }
+        console.error("Error al obtener la ubicación:", error);
         return {
             descripcion: 'Sin descripción',
             longitud: 'N/A',
@@ -50,87 +84,77 @@ async function obtenerUbicacionPorId(ubicacionId) {
     }
 }
 
-// Función para renderizar sucursales en la tabla
+// Función para mostrar las sucursales en la tabla
 function mostrarSucursales(datos) {
     const tablaBody = document.querySelector('.tabla tbody');
     tablaBody.innerHTML = ''; // Limpiar la tabla
 
     datos.forEach(sucursal => {
+        const sucursalId = sucursal._id.toString(); // Convertimos el ObjectId a string
+        const ubicacionId = sucursal.ubicacionId?.toString() || 'N/A';
+
+        if (!sucursalId) {
+            console.error("ID de sucursal no válido:", sucursal);
+            return;
+        }
+
         const fila = document.createElement('tr');
         fila.innerHTML = `
             <td>${sucursal.nombre}</td>
-            <td>${sucursal.descripcion}</td>
+            <td>${sucursal.ubicacionDescripcion}</td>
             <td>${sucursal.longitud}</td>
             <td>${sucursal.latitud}</td>
             <td>
-                <button class="editar-btn" data-id="${sucursal._id}">Editar</button>
-                <button class="eliminar-btn" data-id="${sucursal._id}">Eliminar</button>
+                <button class="editar-btn" data-id="${sucursalId}">Editar</button>
+                <button class="eliminar-btn" data-id="${sucursalId}">Eliminar</button>
             </td>
         `;
         tablaBody.appendChild(fila);
 
-        // Agregar eventos para los botones de Editar y Eliminar
         const btnEdit = fila.querySelector('.editar-btn');
         const btnDelete = fila.querySelector('.eliminar-btn');
 
+        // Redirigir a editarSucursal.html con el ID como parámetro en la URL
         btnEdit.addEventListener('click', () => {
-            editarSucursal(sucursal._id);
+            window.location.href = `/HTML/sucursales/editarSucursal.html?id=${sucursalId}`;
         });
 
         btnDelete.addEventListener('click', () => {
-            eliminarSucursal(sucursal._id);
+            console.log("Botón eliminar clicado, ID:", sucursalId); // Log para depuración
+            eliminarSucursal(sucursalId);
         });
     });
 }
 
-// Configurar la búsqueda
-function configurarBusqueda(datos) {
-    const formBuscar = document.getElementById('form-buscar');
-    const inputBuscar = document.getElementById('input-buscar');
 
-    formBuscar.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevenir recarga de la página
-
-        const query = inputBuscar.value.toLowerCase(); // Convertir a minúsculas para búsqueda insensible a mayúsculas
-        const datosFiltrados = datos.filter(d =>
-            d.nombre.toLowerCase().includes(query) ||
-            d.descripcion.toLowerCase().includes(query)
-        );
-
-        mostrarSucursales(datosFiltrados);
-    });
-
-    inputBuscar.addEventListener('input', () => {
-        const query = inputBuscar.value.toLowerCase();
-        const datosFiltrados = datos.filter(d =>
-            d.nombre.toLowerCase().includes(query) ||
-            d.descripcion.toLowerCase().includes(query)
-        );
-
-        mostrarSucursales(datosFiltrados);
-    });
-}
-
-// Llamar a la función al cargar la página
-document.addEventListener('DOMContentLoaded', async () => {
+// Función para cargar las sucursales y mostrarlas en la tabla
+async function cargarSucursales() {
     try {
         const token = getToken();
         if (!token) return;
 
-        const config = {
+        const responseSucursales = await fetch('https://apitentacion.onrender.com/sucursales', {
             headers: { Authorization: `Bearer ${token}` },
-        };
+        });
 
-        const responseSucursales = await axios.get('https://apitentacion.onrender.com/sucursales', config);
-        const sucursales = responseSucursales.data;
+        if (!responseSucursales.ok) {
+            console.error("Error al obtener sucursales:", await responseSucursales.json());
+            return;
+        }
+
+        const sucursales = await responseSucursales.json();
 
         const datosCompletos = await Promise.all(
             sucursales.map(async (sucursal) => {
-                const ubicacion = await obtenerUbicacionPorId(sucursal.ubicacion._id);
+                const ubicacion = await obtenerUbicacionPorId(sucursal.ubicacion?._id);
                 return {
                     _id: sucursal._id,
+                    ubicacionId: sucursal.ubicacion?._id,
                     nombre: sucursal.nombre,
-                    ...ubicacion,
+                    descripcion: sucursal.descripcion,
+                    ubicacionDescripcion: ubicacion.descripcion,
+                    longitud: ubicacion.longitud,
+                    latitud: ubicacion.latitud,
                 };
             })
         );
@@ -140,4 +164,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error("Error al obtener sucursales o ubicaciones:", error);
     }
+}
+function configurarBusqueda(datos) {
+    const formBuscar = document.getElementById('form-buscar');
+    const inputBuscar = document.getElementById('input-buscar');
+
+    formBuscar.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = inputBuscar.value.toLowerCase();
+        const datosFiltrados = datos.filter(d =>
+            (d.nombre?.toLowerCase() || '').includes(query) ||
+            (d.descripcion?.toLowerCase() || '').includes(query) ||
+            (d.ubicacionDescripcion?.toLowerCase() || '').includes(query)
+        );
+
+        mostrarSucursales(datosFiltrados);
+    });
+
+    inputBuscar.addEventListener('input', () => {
+        const query = inputBuscar.value.toLowerCase();
+        const datosFiltrados = datos.filter(d =>
+            (d.nombre?.toLowerCase() || '').includes(query) ||
+            (d.descripcion?.toLowerCase() || '').includes(query) ||
+            (d.ubicacionDescripcion?.toLowerCase() || '').includes(query)
+        );
+
+        mostrarSucursales(datosFiltrados);
+    });
+}
+
+// Llamar a la función al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarSucursales();
 });
