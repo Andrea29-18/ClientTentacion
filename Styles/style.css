@@ -495,3 +495,35 @@ footer p {
     width: 450px;
     height: 450px;
 }
+
+.producto.producto--rosca-reyes {
+    background-image: url('../Resources/Postres/ReyesRosca.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--pan-muerto {
+    background-image: url('../Resources/Postres/panmuerto.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--pan-concha {
+    background-image: url('../Resources/Postres/conchas.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
+
+.producto.producto--tipo-cupckae {
+    background-image: url('../Resources/Postres/cupcake.png');
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 450px;
+}
