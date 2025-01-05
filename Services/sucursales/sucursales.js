@@ -30,10 +30,9 @@ async function obtenerUbicacionPorId(ubicacionId) {
     }
 
     try {
-        // Llamada a la API de ubicaciones (pública, no requiere token)
         const response = await axios.get(`https://apitentacion.onrender.com/ubicaciones/${ubicacionId}`);
         if (response.status === 200) {
-            return response.data; // Devuelve la información de la ubicación
+            return response.data;
         }
     } catch (error) {
         if (error.response) {
@@ -51,7 +50,6 @@ async function obtenerUbicacionPorId(ubicacionId) {
     }
 }
 
-// Función para renderizar sucursales en la tabla
 // Función para renderizar sucursales en la tabla
 function mostrarSucursales(datos) {
     const tablaBody = document.querySelector('.tabla tbody');
@@ -72,8 +70,8 @@ function mostrarSucursales(datos) {
         tablaBody.appendChild(fila);
 
         // Agregar eventos para los botones de Editar y Eliminar
-        const btnEdit = fila.querySelector('.btn-edit');
-        const btnDelete = fila.querySelector('.btn-delete');
+        const btnEdit = fila.querySelector('.editar-btn');
+        const btnDelete = fila.querySelector('.eliminar-btn');
 
         btnEdit.addEventListener('click', () => {
             editarSucursal(sucursal._id);
@@ -99,10 +97,9 @@ function configurarBusqueda(datos) {
             d.descripcion.toLowerCase().includes(query)
         );
 
-        mostrarSucursales(datosFiltrados); // Mostrar solo las sucursales que coincidan
+        mostrarSucursales(datosFiltrados);
     });
 
-    // Búsqueda en tiempo real
     inputBuscar.addEventListener('input', () => {
         const query = inputBuscar.value.toLowerCase();
         const datosFiltrados = datos.filter(d =>
@@ -110,7 +107,7 @@ function configurarBusqueda(datos) {
             d.descripcion.toLowerCase().includes(query)
         );
 
-        mostrarSucursales(datosFiltrados); // Mostrar datos filtrados mientras se escribe
+        mostrarSucursales(datosFiltrados);
     });
 }
 
@@ -124,19 +121,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             headers: { Authorization: `Bearer ${token}` },
         };
 
-        // Obtén las sucursales
         const responseSucursales = await axios.get('https://apitentacion.onrender.com/sucursales', config);
         const sucursales = responseSucursales.data;
 
-        // Obtén ubicaciones para cada sucursal usando el ID de la ubicación
         const datosCompletos = await Promise.all(
             sucursales.map(async (sucursal) => {
-                // Asegúrate de pasar solo el ObjectId (que es una cadena) a la función de ubicación
-                const ubicacion = await obtenerUbicacionPorId(sucursal.ubicacion._id); // Pasa el _id
+                const ubicacion = await obtenerUbicacionPorId(sucursal.ubicacion._id);
                 return {
                     _id: sucursal._id,
                     nombre: sucursal.nombre,
-                    ...ubicacion, // Completa la información de la ubicación
+                    ...ubicacion,
                 };
             })
         );
