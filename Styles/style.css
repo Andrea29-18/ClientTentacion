@@ -540,3 +540,90 @@ footer p {
     width: 450px;
     height: 450px;
 }
+
+/*--------------------------Costeo -------------------------------------------------------*/
+
+/* Estilo principal del formulario */
+#costeo-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre los elementos */
+}
+
+/* Contenedor de insumos */
+#insumos-container {
+    margin-bottom: 20px;
+}
+
+/* Título de insumos */
+#insumos-container h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Botón agregar insumo */
+#add-insumo-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFCC83;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#add-insumo-btn:hover {
+    background-color: #FFAA64;
+}
+
+/* Etiqueta y select de ganancia */
+#ganancia-multiplicador {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Botón de calcular */
+#costeo-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF8986;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#costeo-form button[type="submit"]:hover {
+    background-color: #FAC2D1;
+}
+
+/* Estilo de los párrafos de resultados */
+#costo-gasto,
+#costo-utilizado,
+#precio-final {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
