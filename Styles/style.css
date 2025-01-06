@@ -627,3 +627,87 @@ footer p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
+
+/*---------------------------------pedidos -----------------------------------------------*/
+/* Estilo general de las tarjetas */
+.pedido-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Título del pedido */
+.pedido-card h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+
+}
+
+/* Botón de toggle */
+.toggle-detalles-btn{
+    align-self: start;
+    padding: 8px 12px;
+    background-color:#FFAA64;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.pedido-card button:hover {
+    background-color: #FFCC83;
+}
+
+/* Detalles del pedido */
+.pedido-detalles {
+    padding-left: 15px;
+    display: none; /* Ocultas inicialmente */
+    background-color: #f3f3f3;
+    border-left: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Productos dentro de los detalles */
+.productos-pedidos {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.productos-pedidos:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+/* Responsive por diseño fluido */
+#pedidos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.pedido-card,
+.pedido-detalles,
+.productos-pedidos {
+    width: 100%;
+    box-sizing: border-box;
+}
+
