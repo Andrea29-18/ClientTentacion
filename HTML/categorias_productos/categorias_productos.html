@@ -10,7 +10,7 @@
             src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         <link rel="stylesheet" href="/Styles/style.css">
-        <title>Productos</title>
+        <title>Tipos de productos</title>
     </head>
     <body>
         <header>
@@ -20,31 +20,30 @@
         </header>
         <main>
         <section class="sub-header">
-            <h1 class="subtitulo">Gestión de productos</h1>
+            <h1 class="subtitulo">Gestión de categorias de productos</h1>
             <form action="#" method="GET" class="form-buscar" id="form-buscar">
                 <input type="text" name="query" id="input-buscar"
-                    placeholder="Buscar productos..." required
+                    placeholder="Buscar categoria..." required
                     class="input-buscar">
                 <button type="submit" class="btn-buscar">Buscar</button>
             </form>
 
         </section>
-
-        <button class="btn-header" onclick="location.href='/HTML/agregarProducto.html'">Añadir producto</button>
+        
+        <button class="btn-header" onclick="location.href='/HTML/categorias_productos/añadirCategoria.html'">Añadir categoria nueva</button>
 
 
         <section class="tabla">
             <table>
                 <thead>
                     <tr>
-                        <th>Nombre </th>
-                        <th>Cantidad en stock</th>
-                        <th>Precio</th>
+                        <th>Nombre de la categoria </th>
+                        <th>Descripción</th> 
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Aquí se llenarán los productos -->
+                    <!-- Aquí se llenarán las categorias de productos -->
                 </tbody>
             </table>
         </section>
@@ -55,6 +54,6 @@
                 <p>Desarrollado por <strong>LULA Code</strong>.</p>
             </div>
         </footer>
-        <script  type="module" src="/Services/productos.js"></script>
+        <script  type="module" src="/Services/categorias_productos/categorias_productos.js"></script>
     </body>
 </html>

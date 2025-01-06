@@ -209,7 +209,7 @@ main {
 
 .tabla tbody tr {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta ancho mínimo */
     gap: 12px;
     align-items: center;
 }
@@ -229,10 +229,23 @@ main {
 
 .tabla thead tr {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta ancho mínimo */
     gap: 12px;
 }
 
+/* Media Query para Pantallas Pequeñas */
+@media (max-width: 768px) {
+    .tabla tbody tr, .tabla thead tr {
+        grid-template-columns: 1fr; /* Cambiar a diseño vertical */
+        gap: 8px; /* Reducir espacio entre columnas */
+    }
+
+    .tabla th, .tabla td {
+        text-align: left; /* Mantener alineación */
+        font-size: 14px; /* Ajustar tamaño de texto */
+        padding: 8px; /* Reducir padding */
+    }
+}
 
 .editar-btn {
     background-color: #FFAA64;
