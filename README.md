@@ -1,6 +1,5 @@
 ### **README.md**
 
-```markdown
 # D.Tentación - Cliente Web
 
 D.Tentación es una página web diseñada para gestionar de manera eficiente los procesos operativos de la pastelería **D.Tentación**, incluyendo el manejo de productos, insumos, sucursales, beneficios para clientes, y más. Este cliente web proporciona una interfaz amigable y moderna para la administradora y los usuarios.
@@ -45,7 +44,7 @@ Este proyecto está diseñado específicamente para la **administradora de D.Ten
    ```
 2. Accede al directorio del cliente:
    ```bash
-   cd Clienttentacion
+   cd ClientTentacion
    ```
    
 5. Abre tu navegador y accede a:
