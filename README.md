@@ -32,6 +32,12 @@ Este proyecto está diseñado específicamente para la **administradora de D.Ten
 
 ## 📥 **Instrucciones de Instalación**
 
+### **Requisitos Necesarios**
+1. Tener un navegador web, de preferencia [Chrome](https://www.google.com/intl/es_us/chrome/)
+2. Descargar la extención de ['CORS Unblock'](https://chromewebstore.google.com/detail/cors-unblock/hadoojkfknbjgoppkecpgamiajljiief?hl=en-US&utm_source=ext_sidebar)
+3. Utilizar cualquier IDE de su preferencia, se recomienda Visual Studio Code
+4. Ocupar la extención de 'Live Server'
+
 ### **Pasos para Instalar**
 1. Clona este repositorio en tu máquina local:
    ```bash
@@ -46,8 +52,6 @@ Este proyecto está diseñado específicamente para la **administradora de D.Ten
    ```plaintext
    http://localhost:<PUERTO_ASIGNADO>
    ```
-
----
 
 ## 📚 **Estructura del Proyecto**
 
