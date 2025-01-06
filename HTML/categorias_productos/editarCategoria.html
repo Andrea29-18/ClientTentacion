@@ -8,42 +8,39 @@
         <!-- Agregar Axios desde el CDN -->
         <script
             src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
         <link rel="stylesheet" href="/Styles/style.css">
-        <title>Editar sucursal</title>
+        <title>Editar categoria</title>
     </head>
     <body>
         <header>
-            <h1 class="titulo-elegante">D.Tentación</h1>
+            <h1 class="titulo-elegante">D.Tentación </h1>
             <button class="btn-header">Pedidos pendientes</button>
             <button class="btn-header">Enviar Pedido</button>
         </header>
         <main>
-            <h1 class="subtitulo">Editar sucursal</h1>
+            <h1 class="subtitulo">Editar categoria</h1>
             <section class="formulario">
                 <form action="#" method="POST" class="form-agregar"
-                    id="form-agregar-sucursal">
-                    <label for="nombreSucursal">Nombre de la sucursal:</label>
-                    <input type="text" name="nombreSucursal" id="nombreSucursal"
-                        placeholder="Nombre de la sucursal" required
+                    id="form-agregar-categoria">
+                    <label for="nombreCategoria">Nombre de la categoria:</label>
+                    <input type="text" name="nombreCategoria" id="nombreCategoria"
+                        placeholder="Nombre de la categoria" required
                         class="input-agregar">
-
-                    <label for="ubicacion">Ubicación:</label>
-                    <select name="ubicacion" id="ubicacion" required class="input-agregar">
-                        <option value="">Seleccionar ubicación</option>
-                    </select>
-                    
-
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" name="descripcion" id="descripcion"
+                        placeholder="Descripción de la categoria" required
+                        class="input-agregar">
                     <button type="submit" class="btn-header">Aceptar</button>
                 </form>
             </section>
-        </main>
+    </main>
         <footer>
             <div>
-                <p>&copy; 2024 D.Tentación. Todos los derechos reservados.</p>
+                <p>&copy; 2024 D.Tentacion. Todos los derechos reservados.</p>
                 <p>Desarrollado por <strong>LULA Code</strong>.</p>
             </div>
         </footer>
-        <script type="module"
-            src="/Services/sucursales/editarSucursal.js"></script>
+        <script  type="module" src="/Services/categorias_productos/editarCategoria.js"></script>
     </body>
 </html>

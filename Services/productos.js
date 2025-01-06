@@ -43,7 +43,6 @@ function mostrarProductos(productos) {
     productos.forEach(producto => {
         const fila = document.createElement('tr');
         fila.innerHTML = `
-            <td>${producto._id}</td>
             <td>${producto.nombreProducto}</td>
             <td>${producto.cantidadStock}</td>
             <td>${producto.precioFinal}</td>
@@ -98,7 +97,7 @@ async function eliminarProducto(productoId) {
             },
         };
 
-        const response = await axios.delete(`hhttps://apitentacion.onrender.com/productos/${productoId}`, config);
+        const response = await axios.delete(`https://apitentacion.onrender.com/productos/${productoId}`, config);
 
         if (response.status === 200) {
             // Mostrar el mensaje de éxito

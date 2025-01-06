@@ -6,11 +6,18 @@
     <link rel="icon" type="image/png" href="/Resources/Images/pastel-icon.png">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Costeo de Insumos</title>
-    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="/Styles/style.css">
 </head>
 <body>
+    <header>
+        <h1 class="titulo-elegante">D.Tentación </h1>
+        <button class="btn-header">Pedidos pendientes</button>
+        <button class="btn-header">Enviar Pedido</button>
+    </header>
     <main>
-        <h1>Calculadora de Costeo</h1>
+        <h1 class="subtitulo">Calculadora de Costeo</h1>
+        <section id="calculadora">
+          
         <form id="costeo-form">
             <section id="insumos-container">
                 <h2>Insumos</h2>
@@ -27,7 +34,14 @@
         <p id="costo-gasto">Total Gastado: $0.00</p>
         <p id="costo-utilizado">Total Utilizado: $0.00</p>
         <p id="precio-final">Precio Final: $0.00</p>
+        </section>
     </main>
     <script src="/Services/calcularCosteo.js"></script>
+    <footer>
+        <div>
+            <p>&copy; 2024 D.Tentacion. Todos los derechos reservados.</p>
+            <p>Desarrollado por <strong>LULA Code</strong>.</p>
+        </div>
+    </footer>
 </body>
 </html>

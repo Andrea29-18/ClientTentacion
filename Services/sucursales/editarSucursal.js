@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const nombreInput = document.getElementById('nombreSucursal');
     const ubicacionSelect = document.getElementById('ubicacion');
 
-    // Cargar datos de la sucursal
     try {
+        // Cargar datos de la sucursal
         const responseSucursal = await fetch(`https://apitentacion.onrender.com/sucursales/${sucursalId}`, {
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const ubicaciones = await responseUbicaciones.json();
-        ubicacionSelect.innerHTML = '<option value>Seleccionar ubicación</option>';
+        ubicacionSelect.innerHTML = '<option value="">Seleccionar ubicación</option>'; // Valor vacío inicial
         ubicaciones.forEach(ubicacion => {
             const option = document.createElement('option');
-            option.value = ubicacion._id;
-            option.textContent = ubicacion.descripcion;
-            if (sucursal.ubicacionId === ubicacion._id) {
+            option.value = ubicacion._id; // Asignar el _id como valor
+            option.textContent = ubicacion.descripcion; // Mostrar la descripción
+            if (sucursal.ubicacion === ubicacion._id) { // Comparar con el campo `ubicacion` de la sucursal
                 option.selected = true;
             }
             ubicacionSelect.appendChild(option);
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         event.preventDefault();
 
         const nombre = nombreInput.value.trim();
-        const ubicacionId = ubicacionSelect.value;
+        const ubicacionId = ubicacionSelect.value; // Asegurarnos de obtener el ID de la ubicación
 
         if (!nombre || !ubicacionId) {
             alert("Por favor, completa todos los campos.");
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ nombre, ubicacionId }),
+                body: JSON.stringify({ nombre, ubicacion: ubicacionId }), // Usar el ID de ubicación
             });
 
             if (!response.ok) {
