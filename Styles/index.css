@@ -155,3 +155,28 @@ nav ul li a:hover {
 .producto--galletas-jengibre {
     background-image: url('/Resources/Postres/jengibre.png');
 }
+
+.social-media {
+    display: flex;
+    justify-content: center; /* Centra los logos horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    gap: 20px; /* Espaciado entre los logos */
+    margin-top: 10px;
+}
+
+.social-link {
+    width: 5px; /* Tamaño del logo */
+    height: 5px;
+    display: block; /* Asegura que sean elementos de bloque para aplicar correctamente el background */
+    background-size: contain; /* Ajusta el tamaño de la imagen al contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.producto--logo-facebook {
+    background-image: url('/Resources/Images/facebook.png');
+}
+
+.producto--logo-instragram {
+    background-image: url('/Resources/Images/instagram.png');
+}
