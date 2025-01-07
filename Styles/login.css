@@ -105,7 +105,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/*inicio de sesion */
 #login {
     border-radius: 10px;
     padding: 20px;
@@ -133,7 +132,6 @@ input[type="text"], input[type="password"] {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem; /* Unidades relativas */
-    
 }
 
 #loginForm {
@@ -203,6 +201,27 @@ input[type="text"], input[type="password"] {
     margin-top: -5px;
 }
 
+/* Contenedor de la contraseña con el ícono del ojo */
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #FFB2C7;
+    transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+    color: #e67e22; /* Cambia el color del icono al pasar el ratón */
+}
+
+
 /* Contenedor de la imagen */
 .image-container {
     width: 100%;
@@ -215,4 +234,76 @@ input[type="text"], input[type="password"] {
     justify-content: flex-end; /* Alinea la imagen al lado derecho */
     align-items: flex-end; /* Coloca la imagen al fondo de la pantalla */
     margin-top: 20px; /* Ajuste opcional para el espaciado entre el formulario y la imagen */
+}
+
+
+
+.overlay-hidden {
+    display: none !important; /* Asegura que no se sobrescriba */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.overlay-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.cerrar-btn {
+    background-color: #FFAA64;
+    color: #FFFDF4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enviar-recuperacion-btn {
+    background-color: #FF8986;
+    color: #FFFDF4;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+footer {
+    background-color: #FFCC83;
+    color: #333333;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 3%;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    
 }
