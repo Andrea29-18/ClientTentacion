@@ -80,6 +80,10 @@ header {
     word-wrap: break-word;
 }
 
+ #login .titulo-elegante {
+   color: #FF8986;
+}
+
 header h1 {
     font-family: 'Style Script', cursive;
     font-size: 36px;

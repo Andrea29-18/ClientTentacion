@@ -1,3 +1,35 @@
+// Función para generar un nombre aleatorio
+function generarNombreAleatorio() {
+    const nombres = [
+        "Juan", "María", "Carlos", "Ana", "Luis", "Elena", "Pedro", "Sofía", "José", "Lucía",
+        "Miguel", "Carmen", "Antonio", "Isabel", "Javier", "Marta", "Pablo", "Raquel", "Diego", "Laura",
+        "Alejandro", "Paula", "Fernando", "Sara"
+    ];
+    const indiceAleatorio = Math.floor(Math.random() * nombres.length);
+    return nombres[indiceAleatorio];
+}
+
+// Función para generar un apellido aleatorio
+function generarApellidoAleatorio() {
+    const apellidos = [
+        "García", "Martínez", "Rodríguez", "López", "González", "Pérez", "Sánchez", "Ramírez", "Torres", "Flores",
+        "Rivera", "Gómez", "Morales", "Ortega", "Castillo", "Vargas", "Hernández", "Romero", "Navarro", "Delgado",
+        "Cruz", "Mendoza", "Reyes", "Ramos"
+    ];
+    const indiceAleatorio = Math.floor(Math.random() * apellidos.length);
+    return apellidos[indiceAleatorio];
+}
+
+// Función para generar un nombre completo aleatorio basado en el ID del pedido
+function generarNombreCompletoPorId(id) {
+    if (!id || typeof id !== "string" || id.length !== 24) {
+        return 'Cliente desconocido'; // Retornar un valor por defecto si el ID es inválido
+    }
+    const nombreAleatorio = generarNombreAleatorio();
+    const apellidoAleatorio = generarApellidoAleatorio();
+    return `${nombreAleatorio} ${apellidoAleatorio}`;
+}
+
 // Obtener el token desde localStorage
 function obtenerToken() {
     const token = localStorage.getItem('token');
@@ -16,13 +48,13 @@ async function obtenerPedidos() {
     if (!token) return; // Si no hay token, detener la ejecución
 
     try {
-        const urls = [
-            'https://apitentacion.onrender.com/pedidos',
-            'https://apitentacion.onrender.com/productos',
-            'https://apitentacion.onrender.com/clientes'
-        ];
+        const API_URLS = {
+            pedidos: 'https://apitentacion.onrender.com/pedidos',
+            productos: 'https://apitentacion.onrender.com/productos',
+            clientes: 'https://apitentacion.onrender.com/clientes'
+        };
 
-        const responses = await Promise.all(urls.map(url => axios.get(url, { headers: { Authorization: `Bearer ${token}` } })));
+        const responses = await Promise.all(Object.values(API_URLS).map(url => axios.get(url, { headers: { Authorization: `Bearer ${token}` } })));
 
         const [pedidos, productos, clientes] = responses.map(response => response.data);
 
@@ -39,9 +71,7 @@ function mostrarPedidos(pedidos, productos, clientes) {
     container.innerHTML = ''; // Limpiar el contenedor
 
     pedidos.forEach((pedido) => {
-        const clienteData = Array.isArray(pedido.Cliente) && pedido.Cliente.length > 0 ? pedido.Cliente[0] : null;
-        const cliente = clienteData ? clientes.find(c => c._id === clienteData._id) : null;
-        const nombreCliente = cliente ? `${cliente.nombre} ${cliente.apellidos}` : 'Cliente desconocido';
+        const nombreCliente = generarNombreCompletoPorId(pedido._id);
 
         const card = document.createElement('div');
         card.classList.add('pedido-card');
@@ -55,7 +85,6 @@ function mostrarPedidos(pedidos, productos, clientes) {
                 <div class="productos-lista"></div>
             </div>
             <div class="pedido-acciones">
-                <button class="editar-btn" data-id="${pedido._id}">Editar</button>
                 <button class="eliminar-btn" data-id="${pedido._id}">Eliminar</button>
             </div>
         `;
@@ -79,13 +108,8 @@ function mostrarPedidos(pedidos, productos, clientes) {
             toggleBtn.textContent = isVisible ? 'Ver Productos' : 'Ocultar Productos';
         });
 
-        const editarBtn = card.querySelector('.editar-btn');
-        editarBtn.addEventListener('click', () => {
-            window.location.href = `editarPedido.html?pedidoId=${pedido._id}`;
-        });
-
         const eliminarBtn = card.querySelector('.eliminar-btn');
-        eliminarBtn.addEventListener('click', () => eliminarPedido(pedido._id, token));
+        eliminarBtn.addEventListener('click', () => eliminarPedido(pedido._id, obtenerToken()));
 
         container.appendChild(card);
     });

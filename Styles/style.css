@@ -271,56 +271,47 @@ main {
 /* Estilos para los labels dentro del formulario */
 /*--------------------------agregar producto -------------------------------------------------------*/
 /* Centrado del formulario en la página */
-
 .formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    /* Reduce el ancho relativo para pantallas pequeñas */
-    max-width: 25em;
-    /* Limita el ancho máximo a un valor proporcional */
-    min-height: 100vh;
-    /* Asegura que siempre ocupe la altura mínima de la ventana */
-    margin: 0 auto;
-    padding: 2em;
-    /* Espaciado proporcional al tamaño de la fuente */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 20em; /* Reduce el ancho máximo */
+    margin: 2em auto; /* Espaciado vertical */
+    padding: 1.5em; /* Espaciado interno compacto */
     box-sizing: border-box;
+    background-color: #FFFDF4; /* Fondo claro para diferenciar */
+    border: 1px solid #ccc; /* Borde ligero */
+    border-radius: 8px; /* Redondeo suave */
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Estilos para los labels */
 .formulario label {
     display: flex;
     width: 100%;
-    /* Mantén el ancho relativo */
-    max-width: 15em;
-    /* Evita que se expanda demasiado */
+    max-width: 100%; /* Ajusta al ancho del contenedor */
     flex-direction: column;
     align-items: flex-start;
-    flex-shrink: 1;
-    /* Permite que el label se ajuste al espacio disponible */
-    background-color: #FFFDF4;
-    color: #444444;
-    margin-bottom: 0.5em;
-    /* Espaciado relativo */
-    padding: 0.5em;
-    font-size: 1em;
+    margin-bottom: 0.5em; /* Espaciado inferior compacto */
+    font-size: 1em; /* Conserva el tamaño original */
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    color: #444444; /* Conserva el color original */
     box-sizing: border-box;
 }
 
 /* Estilo de los inputs */
-.formulario input, .formulario select {
+.formulario input,
+.formulario select {
     width: 100%;
-    /* Ajusta automáticamente al contenedor */
-    padding: 0.5em;
-    margin-bottom: 1em;
-    font-size: 1em;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    padding: 0.5em; /* Espaciado interno */
+    margin-bottom: 0.75em; /* Espaciado inferior compacto */
+    font-size: 1em; /* Conserva el tamaño original */
+    border-radius: 4px; /* Conserva el redondeo original */
+    border: 1px solid #ccc; /* Borde ligero */
     box-sizing: border-box;
+    background-color: #fff; /* Fondo blanco para inputs */
 }
 
 /* Botón dentro del formulario */
@@ -328,30 +319,22 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    /* Ancho fijo como en .btn-header */
-    height: 50px;
-    /* Altura fija como en .btn-header */
-    border-radius: 28px;
-    /* Borde redondeado similar */
-    background-color: #FF8986;
-    /* Color de fondo original */
-    color: #FFF;
-    /* Texto en blanco */
-    font-size: 16px;
-    /* Tamaño de fuente como en .btn-header */
-    border: none;
-    /* Sin borde */
+    width: auto; /* Ajusta el ancho al contenido */
+    padding: 0.5em 1em; /* Espaciado interno compacto */
+    height: auto; /* Elimina la altura fija */
+    border-radius: 28px; /* Conserva el redondeo original */
+    background-color: #FF8986; /* Conserva el color original */
+    color: #FFF; /* Conserva el color de texto */
+    font-size: 16px; /* Conserva el tamaño original */
+    font-weight: 500; /* Conserva el peso original */
+    border: none; /* Sin bordes adicionales */
     cursor: pointer;
-    margin-bottom: 16px;
-    /* Separación inferior */
-    margin-top: 1%;
-    /* Separación superior */
-    transition: background-color 0.3s ease;
-    /* Animación de transición */
-
+    margin-top: 1em; /* Espaciado superior compacto */
+    margin-bottom: 16px; /* Conserva el espaciado inferior */
+    transition: background-color 0.3s ease; /* Conserva la animación */
 }
 
+/* Estilo para el contenedor de opciones */
 #nombreInsumo {
     height: auto;
     /* Permite que crezca según las opciones */
@@ -711,3 +694,11 @@ footer p {
     box-sizing: border-box;
 }
 
+.formulario p{
+    color: #333333;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+/*------------ -----------------------------------------------*/
