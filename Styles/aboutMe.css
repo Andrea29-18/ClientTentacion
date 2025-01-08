@@ -49,7 +49,10 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+/* 
+aqui comienza el css de la pagina de aboutMe */
+ 
+/* General */
 /* General */
 body {
     font-family: 'Roboto', sans-serif;
@@ -61,13 +64,14 @@ body {
 
 header {
     display: flex;
-    flex-flow: row nowrap;
-    height: 100px;
+    flex-wrap: wrap;           /* Permite que los elementos se envuelvan en varias filas si es necesario */
+    height: auto;              /* Permite que la altura se ajuste automáticamente */
     background-color: #FF8986;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5vw;
+    padding: 10px 5vw;
     margin-bottom: 2%;
+    gap: 10px;                 /* Añade espacio entre elementos cuando se envuelven */
 }
 
 h2 {
@@ -84,6 +88,7 @@ h2 {
     font-weight: 400;
     line-height: 1.2;
     word-wrap: break-word;
+    text-align: center;        /* Centra el texto para mejorar la apariencia en pantallas pequeñas */
 }
 
 header h1 {
@@ -93,8 +98,12 @@ header h1 {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;           /* Permite que los elementos se envuelvan si no hay suficiente espacio */
     list-style: none;
     gap: 20px;
+    justify-content: center;   /* Centra los elementos horizontalmente */
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li a {
@@ -110,40 +119,82 @@ nav ul li a:hover {
 /* Contenedor principal */
 .sobre-nosotros-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;           /* Permite que los elementos se envuelvan en varias filas si es necesario */
+    justify-content: center;   /* Centra los elementos horizontalmente en pantallas pequeñas */
     align-items: flex-start;
     gap: 20px;
     margin: 40px;
 }
 
-/* Texto */
 .sobre-nosotros-texto {
-    width: 60%;
+    flex: 1 1 60%;             /* Permite que el ancho se ajuste automáticamente según el espacio disponible */
     text-align: justify;
+    min-width: 300px;          /* Asegura un ancho mínimo para una mejor legibilidad */
 }
 
-/* Imágenes */
 .sobre-nosotros-imagenes {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 35%;
+    flex: 1 1 35%;             /* Permite que el ancho se ajuste automáticamente */
+    min-width: 250px;          /* Asegura un ancho mínimo para mantener el tamaño de las imágenes */
 }
 
 .imagen-volteado,
 .imagen-chef {
     width: 100%;
-    height: 200px; /* Ajusta el tamaño según necesites */
+    height: 200px;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .producto.producto--volteado-piña {
     background-image: url('../Resources/Postres/volteadoPiña.png');
     background-size: cover;
     background-position: center;
-    width: 450px;
-    height: 450px;
+    width: 100%;
+    max-width: 450px; /* Máximo de 450px en pantallas grandes */
+    min-width: 200px; /* Evita que el contenedor sea demasiado pequeño */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Mantiene la relación cuadrada */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Query para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .producto.producto--volteado-piña {
+        width: 80%; /* Ancho relativo para pantallas pequeñas */
+        max-width: 350px; /* Limitar a un máximo de 350px para no ser demasiado grande */
+        min-width: 150px; /* Asegurarse de que el contenedor no sea demasiado pequeño */
+    }
+}
+
+
+/* Asegúrate de que el body ocupe toda la altura de la pantalla */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    margin: 0; /* Elimina márgenes predeterminados */
+}
+
+/* El contenido principal ocupa el espacio disponible */
+main {
+    flex: 1;
+}
+
+/* Estilo para el footer */
+footer {
+    background-color: #FFCC83;
+    color: rgb(31, 29, 29);
+    padding: 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
 }

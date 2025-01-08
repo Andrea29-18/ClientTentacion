@@ -96,7 +96,8 @@ main {
     height: 50px;
     border-radius: 28px;
     background: #FFCC83;
-    color: #FFF;
+    color: #393737;
+    font-weight: bold;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -393,9 +394,9 @@ main {
     position: absolute;
     bottom: 10px; /* Coloca el texto en la parte inferior del círculo */
     font-size: 16px;
-    color: #fff;
+    color: #333333;
     text-align: center;
-    font-weight: bold;
+    font-weight:600;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -403,7 +404,7 @@ main {
 
 footer {
     background-color: #FFCC83;
-    color: white;
+    color: #333333;
     font-family: 'Roboto', sans-serif;
     text-align: center;
     padding: 1.5rem;
@@ -416,113 +417,102 @@ footer p {
     margin: 0.5rem 0;
     font-size: 1rem;
     line-height: 1.5;
+    
 }
+/*--------------------------Producto Generales -------------------------------------------------------*/
+
+/* Contenedor general de productos */
+.productos {
+    margin: 20px auto;
+    padding: 0 16px;
+    max-width: 1200px; /* Limita el ancho del contenido */
+}
+
+/* Contenedor flexible de productos */
+.productos-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
+    gap: 16px; /* Espaciado entre los productos */
+    justify-content: center; /* Centra los productos horizontalmente */
+}
+
+/* Productos individuales */
+.producto {
+    background-size: cover;
+    background-position: center;
+    width: 30vw; /* Dimensión relativa al ancho de la pantalla */
+    height: 30vw; /* Mantiene proporción cuadrada */
+    max-width: 300px; /* Limita el tamaño máximo */
+    max-height: 300px; /* Limita el tamaño máximo */
+    display: flex;
+    align-items: flex-end; /* Posiciona el título al fondo */
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px; /* Opcional: añade esquinas redondeadas */
+    overflow: hidden; /* Evita que el contenido salga del borde */
+}
+
+/* Estilo del título */
+.producto__titulo {
+    margin: 0;
+    padding: 8px;
+}
+
+
 
 .producto.producto--volteado-piña {
     background-image: url('../Resources/Postres/volteadoPiña.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
-
-/*--------------------------Producto Generales -------------------------------------------------------*/
 
 .producto.producto--mazafinas-galletas {
     background-image: url('../Resources/Postres/mazafinas.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--besos-nuez {
     background-image: url('../Resources/Postres/besosDeNuez.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--pastisetas-galleta {
     background-image: url('../Resources/Postres/pastisetas.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--galleta-jengibre {
     background-image: url('../Resources/Postres/jengibre.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--galleta-manzana {
     background-image: url('../Resources/Postres/manzanaGalletas.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--galleta-mantequilla {
     background-image: url('../Resources/Postres/galletaMantequilla.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--pan-elote {
     background-image: url('../Resources/Postres/PanElote.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--pan-pina {
     background-image: url('../Resources/Postres/volteadoPina.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--roscas-reyes {
     background-image: url('../Resources/Postres/ReyesRosca.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--pan-muerto {
     background-image: url('../Resources/Postres/panmuerto.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--pan-concha {
     background-image: url('../Resources/Postres/conchas.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
 
 .producto.producto--tipo-cupckae {
     background-image: url('../Resources/Postres/cupcake.png');
-    background-size: cover;
-    background-position: center;
-    width: 450px;
-    height: 450px;
 }
+
 
 /*--------------------------Costeo -------------------------------------------------------*/
 
@@ -701,4 +691,29 @@ footer p {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
-/*------------ -----------------------------------------------*/
+/*------------ nuevo header-----------------------------------------------*/
+nav ul {
+    display: flex;
+    flex-wrap: wrap;        /* Permite que los elementos se envuelvan en varias filas si es necesario */
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+nav ul li {
+    flex: 1 1 auto;         /* Los elementos se ajustan automáticamente según el ancho disponible */
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
