@@ -29,6 +29,18 @@ Este sistema está diseñado para ser intuitivo y fácil de usar, asegurando que
 
 Este proyecto está diseñado específicamente para la **administradora de D.Tentación**, facilitando la gestión de su negocio, así como para los clientes interesados en realizar pedidos y participar en el programa de beneficios.
 
+## ✨ Autores
+
+- Andrea Alejandra Pucheta Vargas ([Andrea29-18](https://github.com/Andrea29-18))
+- César González López ([DracoGilga](https://github.com/DracoGilga))
+- Gerly Daniel Arteaga Bernal ([GerlyUwU](https://github.com/GerlyUwU))
+
+## 👩‍💻👨‍💻 Contribuidores
+
+<a href="https://github.com/Andrea29-18/ApiTentacion/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Andrea29-18/ClientTentacion" />
+</a>
+
 ## 📥 **Instrucciones de Instalación**
 
 ### **Requisitos Necesarios**
