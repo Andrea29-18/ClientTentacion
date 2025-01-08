@@ -37,7 +37,7 @@ Este proyecto está diseñado específicamente para la **administradora de D.Ten
 
 ## 👩‍💻👨‍💻 Contribuidores
 
-<a href="https://github.com/Andrea29-18/ApiTentacion/graphs/contributors">
+<a href="https://github.com/Andrea29-18/ClientTentacion/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Andrea29-18/ClientTentacion" />
 </a>
 
