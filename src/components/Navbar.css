@@ -1,0 +1,43 @@
+/* Estilos generales del Navbar */
+.navbar {
+    position: fixed; /* Fija el Navbar en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%; /* Aumentamos el padding horizontal */
+    background-color: #F6F6F6; /* Fondo blanco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 1000; /* Asegura que el Navbar esté por encima de otros elementos */
+  }
+  
+  /* Estilos para el logotipo */
+  .navbar-logo .logo-text {
+    font-family: 'Italianno', cursive; /* Fuente Italianno */
+    font-size: 2rem;
+    color: #bf1743; /* Color de letra */
+  }
+  
+  /* Estilos para los enlaces */
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem; /* Aumentamos el espacio entre los enlaces */
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Alinea los enlaces a la derecha */
+  }
+  
+  .navbar-links li a {
+    font-family: 'Zilla Slab', serif; /* Fuente Zilla Slab */
+    font-size: 1.2rem;
+    color: #bf1743; /* Color de letra */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links li a:hover {
+    color: #8a0f2f; /* Color más oscuro al hacer hover */
+  }
