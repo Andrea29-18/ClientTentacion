@@ -16,7 +16,7 @@
   /* Estilos para el logotipo */
   .navbar-logo .logo-text {
     font-family: 'Italianno', cursive; /* Fuente Italianno */
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #bf1743; /* Color de letra */
   }
   
@@ -32,7 +32,7 @@
   
   .navbar-links li a {
     font-family: 'Zilla Slab', serif; /* Fuente Zilla Slab */
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #bf1743; /* Color de letra */
     text-decoration: none;
     transition: color 0.3s ease;

@@ -1,4 +1,4 @@
-import './Navbar.css'; // Importamos los estilos
+import './Navbar.css';
 
 const Navbar = () => {
   return (
@@ -12,7 +12,6 @@ const Navbar = () => {
         <li><a href="#productos">Productos</a></li>
         <li><a href="#familia">Familia</a></li>
         <li><a href="#ordena-aqui">Ordena Aquí</a></li>
-        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   );
