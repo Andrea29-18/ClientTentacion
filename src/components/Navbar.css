@@ -1,43 +1,72 @@
-/* Estilos generales del Navbar */
 .navbar {
-    position: fixed; /* Fija el Navbar en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%; /* Aumentamos el padding horizontal */
-    background-color: #F6F6F6; /* Fondo blanco */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    z-index: 1000; /* Asegura que el Navbar esté por encima de otros elementos */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* Reduce el padding horizontal */
+  background-color: #F6F6F6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Estilos para el logotipo */
+.navbar-logo .logo-text {
+  font-family: 'Italianno', cursive;
+  font-size: 2.5rem;
+  color: #bf1743;
+}
+
+/* Estilos para los enlaces */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-left: 0; /* Elimina el margen izquierdo */
+  padding-left: 0;
+}
+
+.navbar-links li a {
+  font-family: 'Zilla Slab', serif;
+  font-size: 1.5rem;
+  color: #bf1743;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar-links li a:hover {
+  color: #8a0f2f;
+}
+
+/* Estilos para el botón con ícono */
+.icon-button {
+  background: none; 
+  border: none;
+  cursor: pointer; 
+  padding: 0;
+}
+
+/* Estilos para la imagen dentro del botón */
+.icon-image {
+  height: 28px; 
+  width: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      padding: 1rem;
   }
-  
-  /* Estilos para el logotipo */
-  .navbar-logo .logo-text {
-    font-family: 'Italianno', cursive; /* Fuente Italianno */
-    font-size: 2.5rem;
-    color: #bf1743; /* Color de letra */
-  }
-  
-  /* Estilos para los enlaces */
+
   .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem; /* Aumentamos el espacio entre los enlaces */
-    margin: 0;
-    padding: 0;
-    margin-left: auto; /* Alinea los enlaces a la derecha */
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
   }
-  
-  .navbar-links li a {
-    font-family: 'Zilla Slab', serif; /* Fuente Zilla Slab */
-    font-size: 1.5rem;
-    color: #bf1743; /* Color de letra */
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-links li a:hover {
-    color: #8a0f2f; /* Color más oscuro al hacer hover */
-  }
+}
